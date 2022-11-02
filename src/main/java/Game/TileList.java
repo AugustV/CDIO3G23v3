@@ -15,8 +15,7 @@ public class TileList {
  * The reason behind this is to make the programming overlook more simple, on top of that the customer also wanted this is a requirement
  */
 
-        liste = new Tile[24];
-        liste[1] = new Tile(lang.title1(),lang.spacetext1(),      );
+        liste = new Tile[12];
         liste[2] = new Tile(lang.title2(), lang.spacetext2(),    250);
         liste[3] = new Tile(lang.title3(), lang.spacetext3(),    -100);
         liste[4] = new Tile(lang.title4(), lang.spacetext4(),    100);
@@ -28,7 +27,7 @@ public class TileList {
         liste[10] = new Tile(lang.title10(), lang.spacetext10(), -80);
         liste[11] = new Tile(lang.title11(), lang.spacetext11(), -50);
         liste[12] = new Tile(lang.title12(), lang.spacetext12(), 650);
-        liste[13] = new Tile(lang.title13(),lang.spacetext13(),     );
+        /*liste[13] = new Tile(lang.title13(),lang.spacetext13(),     );
         liste[14] = new Tile(lang.title14(),lang.spacetext14(),     );
         liste[15] = new Tile(lang.title15(),lang.spacetext15()      );
         liste[16] = new Tile(lang.title16(),lang.spacetext16(),     );
@@ -39,7 +38,7 @@ public class TileList {
         liste[21] = new Tile(lang.title21(), lang.spacetext21(), 0);
         liste[22] = new Tile(lang.title22(), lang.spacetext22(), -70);
         liste[23] = new Tile(lang.title23(), lang.spacetext23(), 60);
-        liste[24] = new Tile(lang.title24(), lang.spacetext24(), -80);
+        liste[24] = new Tile(lang.title24(), lang.spacetext24(), -80);*/
 
     }
 
