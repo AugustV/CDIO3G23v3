@@ -4,15 +4,17 @@ public class Player {
 
     private int saldo;
     public String navn;
+    private int felt;
 
     /**
      *
      * @param n This allows the player to get a personal name
      * @param saldo The player get's a saldo attached to it's name (n)
      */
-    public Player (String n, int saldo){
+    public Player (String n, int saldo, int felt){
         this.navn = n;
         this.saldo = saldo;
+        this.felt = felt;
     }
 
     /**
@@ -34,5 +36,12 @@ public class Player {
     }
     public String toString (){
         return this.navn;
+    }
+
+    public int GetFelt () {return this.felt;}
+
+    public int AddToFelt (int ammount){
+        felt = felt + ammount;
+        return felt;
     }
 }
