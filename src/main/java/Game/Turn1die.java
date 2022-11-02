@@ -1,11 +1,10 @@
 package Game;
 
-public class Turn {
+public class Turn1die {
     /**
      * Creates 2 die objects.
      */
     Die die1 = new Die();
-    Die die2 = new Die();
     int sum;
 
     /**
@@ -16,8 +15,7 @@ public class Turn {
 
     public int tur() {
         die1.roll();
-        die2.roll();
-        sum = die1.getFaceValue() + die2.getFaceValue();
+        sum = die1.getFaceValue();
 
 
         return sum;

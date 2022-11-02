@@ -1,4 +1,4 @@
-import Game.Turn;
+import Game.Turn1die;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
@@ -16,8 +16,8 @@ public class Main {
         if (p == 2){
             String p1 = gui.getUserString("Enter the first players name");
             String p2 = gui.getUserString("Enter the second players name");
-            Turn p1tur = new Turn();
-            Turn p2tur = new Turn();
+            Turn1die p1tur = new Turn1die();
+            Turn1die p2tur = new Turn1die();
             GUI_Player player1 = new GUI_Player( p1, 20);
             GUI_Player player2 = new GUI_Player( p2, 20);
             gui.addPlayer(player1);
@@ -28,7 +28,12 @@ public class Main {
             while (player1.getBalance() > 0 && player2.getBalance() > 0 ){
                 gui.showMessage(p1 + " starts");
                 int r1 = p1tur.tur();
-                gui.showMessage(r1);
+                gui.showMessage("you've got " + r1);
+                gui.setDie(r1);
+                int fp1 = 0;
+                fp1 = fp1 + r1;
+                gui.showMessage("that means you've move to felt " + fp1);
+
             }
         }
 
