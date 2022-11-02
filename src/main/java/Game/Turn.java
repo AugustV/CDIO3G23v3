@@ -1,3 +1,5 @@
+package Game;
+
 public class Turn {
     /**
      * Creates 2 die objects.

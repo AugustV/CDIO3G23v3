@@ -1,3 +1,5 @@
+package Game;
+
 public class Die // simple dice
 {
     /**

@@ -1,3 +1,5 @@
+package Game;
+
 public class Language {
     public static final String YOU_ROLLED = "You rolled ";
 

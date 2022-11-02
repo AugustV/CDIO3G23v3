@@ -1,3 +1,4 @@
+import Game.Turn;
 import gui_main.GUI;
 
 public class Main {
@@ -13,7 +14,7 @@ public class Main {
         if (p == 2){
             String p1 = gui.getUserString("Enter the first players name");
             String p2 = gui.getUserString("Enter the second players name");
-
+            Turn.tur();
         }
 
     }
