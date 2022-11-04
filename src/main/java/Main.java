@@ -29,6 +29,7 @@ public class Main {
             PLayer1GUI.getCar().setPosition(Field);
             Player2GUI.getCar().setPosition(Field);
             while (PLayer1GUI.getBalance() > 0 && Player2GUI.getBalance() > 0 ){
+                /*
                 gui.showMessage(Player1Name + " starts");
                 int Roll1 = Player1Tur.tur();
                 gui.setDie(Roll1);
@@ -38,6 +39,9 @@ public class Main {
                 Field = gui.getFields()[PresentFieldPlayer1];
                 PLayer1GUI.getCar().setPosition(Field);
                 System.out.println(Field);
+
+                 */
+
             }
         }
 
