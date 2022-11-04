@@ -38,6 +38,16 @@ public class Main {
                 Field = gui.getFields()[PresentFieldPlayer1];
                 PLayer1GUI.getCar().setPosition(Field);
                 System.out.println(Field);
+
+                gui.showMessage(Player1Name + " starts");
+                int Roll2 = Player2Tur.tur();
+                gui.setDie(Roll2);
+                gui.showMessage("you've got " + Roll2);
+                int PresentFieldPlayer2 = player2.AddToFelt(Roll2);
+                gui.showMessage("that means you've move to felt " + player2.GetFelt());
+                Field = gui.getFields()[PresentFieldPlayer2];
+                Player2GUI.getCar().setPosition(Field);
+                System.out.println(Field);
             }
         }
 
