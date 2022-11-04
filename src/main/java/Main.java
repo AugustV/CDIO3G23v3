@@ -1,8 +1,11 @@
 import Game.Player;
+import Game.Tile2_0;
 import Game.Turn1die;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
+import org.jetbrains.annotations.NotNull;
+
 
 public class Main {
 
@@ -28,8 +31,9 @@ public class Main {
             GUI_Field Field = gui.getFields()[0];
             PLayer1GUI.getCar().setPosition(Field);
             Player2GUI.getCar().setPosition(Field);
+            gui.showMessage(Player1Name + " starts");
             while (PLayer1GUI.getBalance() > 0 && Player2GUI.getBalance() > 0 ){
-                gui.showMessage(Player1Name + " starts");
+                gui.showMessage("it is " + Player1Name + " turn");
                 int Roll1 = Player1Tur.tur();
                 gui.setDie(Roll1);
                 gui.showMessage("you've got " + Roll1);
@@ -37,9 +41,14 @@ public class Main {
                 gui.showMessage("that means you've move to felt " + player1.GetFelt());
                 Field = gui.getFields()[PresentFieldPlayer1];
                 PLayer1GUI.getCar().setPosition(Field);
-                System.out.println(Field);
+                gui.showMessage("you've landed on " + Field.getTitle());
+                gui.showMessage(Field.getDescription());
+                gui.displayChanceCard("hej");
+                Tile2_0 testtile = new Tile2_0("ejendom",200,1000 );
+                testtile.setOwner("jim");
             }
         }
 
     }
+
 }
