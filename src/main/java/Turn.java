@@ -14,7 +14,7 @@ public class Turn {
     GUI_Player PLayer1GUI = new GUI_Player( Player1Name, 20);
     Player player1 = new Player(Player1Name, 20, 0);
     GUI_Field Field = gui.getFields()[0];
-    public void turnp1(){
+    public roundplayer1(String Player1Name,int saldo){
         gui.showMessage(Player1Name + " starts");
         int Roll1 = Player1Tur.tur();
         gui.setDie(Roll1);
