@@ -16,38 +16,38 @@ public class Main {
                 "how many players are in this game?",
                 "2", "3", "4"
         );
-        int PlayerNumber = Integer.parseInt(userbutton);
-        if (PlayerNumber == 2){
-            String Player1Name = gui.getUserString("Enter the first players name");
-            Player player1 = new Player(Player1Name, 20, 0);
-            String Player2Name = gui.getUserString("Enter the second players name");
-            Player player2 = new Player(Player2Name, 20, 0);
-            Turn1die Player1Tur = new Turn1die();
-            Turn1die Player2Tur = new Turn1die();
-            GUI_Player PLayer1GUI = new GUI_Player( Player1Name, 20);
-            GUI_Player Player2GUI = new GUI_Player( Player2Name, 20);
-            gui.addPlayer(PLayer1GUI);
-            gui.addPlayer(Player2GUI);
-            GUI_Field Field = gui.getFields()[0];
-            PLayer1GUI.getCar().setPosition(Field);
-            Player2GUI.getCar().setPosition(Field);
-            gui.showMessage(Player1Name + " starts");
-            while (PLayer1GUI.getBalance() > 0 && Player2GUI.getBalance() > 0 ){
-                gui.showMessage("it is " + Player1Name + " turn");
-                int Roll1 = Player1Tur.tur();
-                gui.setDie(Roll1);
-                gui.showMessage("you've got " + Roll1);
-                int PresentFieldPlayer1 = player1.AddToFelt(Roll1);
+        int playernumber = Integer.parseInt(userbutton);
+        if (playernumber == 2){
+            String player1name = gui.getUserString("Enter the first players name");
+            Player player1 = new Player(player1name, 20, 0);
+            String player2name = gui.getUserString("Enter the second players name");
+            Player player2 = new Player(player2name, 20, 0);
+            Turn1die player1tur = new Turn1die();
+            Turn1die player2tur = new Turn1die();
+            GUI_Player player1gui = new GUI_Player( player1name, 20);
+            GUI_Player player2gui = new GUI_Player( player2name, 20);
+            gui.addPlayer(player1gui);
+            gui.addPlayer(player2gui);
+            GUI_Field field = gui.getFields()[0];
+            player1gui.getCar().setPosition(field);
+            player2gui.getCar().setPosition(field);
+            gui.showMessage(player1name + " starts");
+            while (player1gui.getBalance() > 0 && player2gui.getBalance() > 0 ){
+                gui.showMessage("it is " + player1name + " turn");
+                int roll1 = player1tur.tur();
+                gui.setDie(roll1);
+                gui.showMessage("you've got " + roll1);
+                int presentfieldplayer1 = player1.AddToFelt(roll1);
                 gui.showMessage("that means you've move to felt " + player1.GetFelt());
-                Field = gui.getFields()[PresentFieldPlayer1];
-                PLayer1GUI.getCar().setPosition(Field);
-                gui.showMessage("you've landed on " + Field.getTitle());
-                gui.showMessage(Field.getDescription());
+                field = gui.getFields()[presentfieldplayer1];
+                player1gui.getCar().setPosition(field);
+                gui.showMessage("you've landed on " + field.getTitle());
+                gui.showMessage(field.getDescription());
                 gui.displayChanceCard("hej");
-                Tilelist2_0 currentfelt = new Tilelist2_0();
+                Tilelist2_0 currentfelt = Tilelist2_0.getInstance();
                 ;
-
-                if (currentfelt.getType(PresentFieldPlayer1) == "ejendom"){
+                System.out.println(currentfelt);
+                if (currentfelt.getType(presentfieldplayer1) == "ejendom"){
 
                 }
             }

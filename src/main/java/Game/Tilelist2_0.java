@@ -4,8 +4,9 @@ import java.lang.reflect.Type;
 
 public class Tilelist2_0 {
     private Tile2_0 [] liste2_0;
+    private static Tilelist2_0 single_instance = null;
 
-    public Tilelist2_0() {
+    private Tilelist2_0() {
         liste2_0 = new Tile2_0[40];
         int i = 0;
         liste2_0[i++] = new Tile2_0("Start",-200,0);
@@ -48,7 +49,15 @@ public class Tilelist2_0 {
         liste2_0[i++] = new Tile2_0("Ejendom", 350 , 350 );
         liste2_0[i++] = new Tile2_0("Statsskat", 100 , 0 );
         liste2_0[i++] = new Tile2_0("Ejendom", 400 , 400 );
+
+
     }
     public String getType(int i) {return liste2_0[i].getType();}
+    public static Tilelist2_0 getInstance()
+    {
+        if(single_instance == null)
+            single_instance = new Tilelist2_0();
+        return single_instance;
 
+    }
 }
