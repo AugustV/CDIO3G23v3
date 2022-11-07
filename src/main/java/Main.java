@@ -16,13 +16,13 @@ public class Main {
         int PlayerNumber = Integer.parseInt(userbutton);
         if (PlayerNumber == 2) {
             String Player1Name = gui.getUserString("Enter the first players name");
-            Player player1 = new Player(Player1Name, 20, 0);
+            Player player1 = new Player(Player1Name, 2000, 0);
             String Player2Name = gui.getUserString("Enter the second players name");
-            Player player2 = new Player(Player2Name, 20, 0);
+            Player player2 = new Player(Player2Name, 2000, 0);
             Turn1die Player1Tur = new Turn1die();
             Turn1die Player2Tur = new Turn1die();
-            GUI_Player PLayer1GUI = new GUI_Player(Player1Name, 20);
-            GUI_Player Player2GUI = new GUI_Player(Player2Name, 20);
+            GUI_Player PLayer1GUI = new GUI_Player(Player1Name, 2000);
+            GUI_Player Player2GUI = new GUI_Player(Player2Name, 2000);
             gui.addPlayer(PLayer1GUI);
             gui.addPlayer(Player2GUI);
             GUI_Field Field = gui.getFields()[0];
@@ -52,17 +52,17 @@ public class Main {
         }
         if (PlayerNumber == 3) {
             String Player1Name = gui.getUserString("Enter the first players name");
-            Player player1 = new Player(Player1Name, 18, 0);
+            Player player1 = new Player(Player1Name, 1800, 0);
             String Player2Name = gui.getUserString("Enter the second players name");
-            Player player2 = new Player(Player2Name, 18, 0);
+            Player player2 = new Player(Player2Name, 1800, 0);
             String Player3Name = gui.getUserString("Enter the third players name");
-            Player player3 = new Player(Player3Name, 18, 0);
+            Player player3 = new Player(Player3Name, 1800, 0);
             Turn1die Player1Tur = new Turn1die();
             Turn1die Player2Tur = new Turn1die();
             Turn1die Player3Tur = new Turn1die();
-            GUI_Player PLayer1GUI = new GUI_Player(Player1Name, 18);
-            GUI_Player Player2GUI = new GUI_Player(Player2Name, 18);
-            GUI_Player Player3GUI = new GUI_Player(Player3Name, 18);
+            GUI_Player PLayer1GUI = new GUI_Player(Player1Name, 1800);
+            GUI_Player Player2GUI = new GUI_Player(Player2Name, 1800);
+            GUI_Player Player3GUI = new GUI_Player(Player3Name, 1800);
             gui.addPlayer(PLayer1GUI);
             gui.addPlayer(Player2GUI);
             gui.addPlayer(Player3GUI);
@@ -105,21 +105,21 @@ public class Main {
         }
         if (PlayerNumber == 4) {
             String Player1Name = gui.getUserString("Enter the first players name");
-            Player player1 = new Player(Player1Name, 16, 0);
+            Player player1 = new Player(Player1Name, 1600, 0);
             String Player2Name = gui.getUserString("Enter the second players name");
-            Player player2 = new Player(Player2Name, 16, 0);
+            Player player2 = new Player(Player2Name, 1600, 0);
             String Player3Name = gui.getUserString("Enter the third players name");
-            Player player3 = new Player(Player3Name, 16, 0);
+            Player player3 = new Player(Player3Name, 1600, 0);
             String Player4Name = gui.getUserString("Enter the fourth players name");
-            Player player4 = new Player(Player4Name, 16, 0);
+            Player player4 = new Player(Player4Name, 1600, 0);
             Turn1die Player1Tur = new Turn1die();
             Turn1die Player2Tur = new Turn1die();
             Turn1die Player3Tur = new Turn1die();
             Turn1die Player4Tur = new Turn1die();
-            GUI_Player PLayer1GUI = new GUI_Player(Player1Name, 16);
-            GUI_Player Player2GUI = new GUI_Player(Player2Name, 16);
-            GUI_Player Player3GUI = new GUI_Player(Player3Name, 16);
-            GUI_Player Player4GUI = new GUI_Player(Player4Name, 16);
+            GUI_Player PLayer1GUI = new GUI_Player(Player1Name, 1600);
+            GUI_Player Player2GUI = new GUI_Player(Player2Name, 1600);
+            GUI_Player Player3GUI = new GUI_Player(Player3Name, 1600);
+            GUI_Player Player4GUI = new GUI_Player(Player4Name, 1600);
             gui.addPlayer(PLayer1GUI);
             gui.addPlayer(Player2GUI);
             gui.addPlayer(Player3GUI);
