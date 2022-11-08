@@ -8,6 +8,7 @@ public class Tilelist2_0 {
     public Tilelist2_0() {
         liste2_0 = new Tile2_0[40];
         int i = 0;
+        // Vi har med vilje valgt at skrive [1], [2] osv, istedet for [i++]. Grunden til dette, er for at vi bedre forstår hvilket felt vi skriver om.
         liste2_0[1] = new Tile2_0("Start",-200,0);
         liste2_0[2] = new Tile2_0("Ejendom", 60,60);
         liste2_0[3] = new Tile2_0("Prøv lykken", 0 , 0 );
