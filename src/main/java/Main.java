@@ -45,11 +45,11 @@ public class Main {
                 gui.showMessage(field.getDescription());
                 gui.displayChanceCard("hej");
                 Tilelist2_0 currentfelt = Tilelist2_0.getInstance();
-                ;
-                System.out.println(currentfelt);
-                if (currentfelt.getType(presentfieldplayer1) == "ejendom"){
 
-                }
+              System.out.println(currentfelt);
+                /*if (currentfelt.getType(presentfieldplayer1) == "ejendom"){
+
+                }*/
             }
         }
 
