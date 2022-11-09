@@ -52,6 +52,8 @@ public class Tilelist2_0 {
         liste2_0[i++] = new Tile2_0("Ejendom", 400 , 400 );
     }
     public String getType(int i) {return liste2_0[i].getType();}
+    public boolean getOwnershipStatus(int i) {return liste2_0[i].getOwnershipStatus();}
+    public int getRent(int i) {return liste2_0[i].getRent();}
     public static Tilelist2_0 getInstance()
     {
         if(single_instance == null)

@@ -11,10 +11,12 @@ public class Tile2_0 {
         this.Type = Type;
         this.OwnershipStatus = false;
         this.Owner = "";
-        this.Rent = Rent;
-        this.Salesprice = Salesprice;
+        this.Rent = rent;
+        this.Salesprice = salesprice;
     }
     public String getType() {return Type;}
+
+    public boolean getOwnershipStatus() {return OwnershipStatus;}
 
     public String getOwner() {return Owner;}
     public void setOwner(String newOwner) {
@@ -25,9 +27,5 @@ public class Tile2_0 {
     public int getRent() {return Rent;}
 
     public int getSalesprice() {return Salesprice;}
-
-    public boolean IsOwned() {
-        return OwnershipStatus;
-    }
 
 }

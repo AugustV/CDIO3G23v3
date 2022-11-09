@@ -34,7 +34,7 @@ public class Main {
             gui.showMessage(player1name + " starts");
             while (player1gui.getBalance() > 0 && player2gui.getBalance() > 0 ){
                 gui.showMessage("it is " + player1name + " turn");
-                int roll1 = player1tur.tur();
+                int roll1 = 1; //player1tur.tur();
                 gui.setDie(roll1);
                 gui.showMessage("you've got " + roll1);
                 int presentfieldplayer1 = player1.AddToFelt(roll1);
@@ -42,14 +42,16 @@ public class Main {
                 field = gui.getFields()[presentfieldplayer1];
                 player1gui.getCar().setPosition(field);
                 gui.showMessage("you've landed on " + field.getTitle());
-                gui.showMessage(field.getDescription());
-                gui.displayChanceCard("hej");
                 Tilelist2_0 currentfelt = Tilelist2_0.getInstance();
 
               System.out.println(currentfelt);
-                /*if (currentfelt.getType(presentfieldplayer1) == "ejendom"){
+                if (currentfelt.getType(presentfieldplayer1) == "Ejendom"){
+                    if (currentfelt.getOwnershipStatus(presentfieldplayer1) == false){
+                        gui.showMessage("you have to pay for rent, because the place is already owned");
+                        player1.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
+                    }
 
-                }*/
+                }
             }
         }
 
