@@ -33,13 +33,17 @@ public class Main {
                 int Roll1 = Player1Tur.tur();
                 gui.setDie(Roll1);
                 gui.showMessage("you've got " + Roll1);
-                int PresentFieldPlayer1 = player1.AddToFelt(Roll1);
+                int PresentFieldPlayer1pre = player1.AddToFelt(Roll1);
+                int PresentFieldPlayer1;
+                if (PresentFieldPlayer1pre>40){
+                    PresentFieldPlayer1 = PresentFieldPlayer1pre - 40;
+                }else PresentFieldPlayer1 = PresentFieldPlayer1pre;
                 gui.showMessage("that means you've move to felt " + player1.GetFelt());
                 Field = gui.getFields()[PresentFieldPlayer1];
                 PLayer1GUI.getCar().setPosition(Field);
                 System.out.println(Field);
-
-                gui.showMessage(Player1Name + " starts");
+            /*
+                gui.showMessage(Player2Name + " starts");
                 int Roll2 = Player2Tur.tur();
                 gui.setDie(Roll2);
                 gui.showMessage("you've got " + Roll2);
@@ -48,6 +52,8 @@ public class Main {
                 Field = gui.getFields()[PresentFieldPlayer2];
                 Player2GUI.getCar().setPosition(Field);
                 System.out.println(Field);
+                */
+
             }
         }
 
