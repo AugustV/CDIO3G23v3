@@ -50,13 +50,17 @@ public class Main {
                 player1gui.getCar().setPosition(field);
                 gui.showMessage("you've landed on " + field.getTitle());
                 Tilelist2_0 currentfelt = Tilelist2_0.getInstance();
-
               System.out.println(currentfelt);
                 if (currentfelt.getType(presentfieldplayer1) == "Ejendom"){
                     if (currentfelt.getOwnershipStatus(presentfieldplayer1)){
-                        gui.showMessage("you have to pay for rent, because the place is already owned");
-                        player1.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
-                        player1gui.setBalance(player1.GetSaldo());
+                        if (currentfelt.getOwner(presentfieldplayer1) == player1name){
+                            gui.showMessage("you own this place, so you don't have to pay rent");
+                        }
+                        else {
+                            gui.showMessage("you have to pay for rent, because the place is already owned");
+                            player1.AddToSaldo(-currentfelt.getRent(presentfieldplayer1));
+                            player1gui.setBalance(player1.GetSaldo());
+                        }
                     }
                     if (currentfelt.getOwnershipStatus(presentfieldplayer1) == false){
                         userbutton = gui.getUserButtonPressed(
@@ -64,19 +68,37 @@ public class Main {
                                 "buy the property", "pay for rent"
                         );
                         if (userbutton == "buy the property"){
-                            player1.AddToSaldo(currentfelt.getSalesprice(presentfieldplayer1));
+                            player1.AddToSaldo(-currentfelt.getSalesprice(presentfieldplayer1));
                             player1gui.setBalance(player1.GetSaldo());
                             currentfelt.setOwner(player1name,presentfieldplayer1);
                             GUI_Ownable ownable = (GUI_Ownable) field;
                             ownable.setOwnerName(player1name);
-
                         }
                         if (userbutton == "pay for rent"){
-                            player1.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
+                            player1.AddToSaldo(-currentfelt.getRent(presentfieldplayer1));
                             player1gui.setBalance(player1.GetSaldo());
                         }
                     }
 
+                }
+                if (currentfelt.getType(presentfieldplayer1) == "payment"){
+                    gui.showMessage("you have to pay " + currentfelt.getRent(presentfieldplayer1));
+                    player1.AddToSaldo(-currentfelt.getRent(presentfieldplayer1));
+                    player1gui.setBalance(player1.GetSaldo());
+                }
+                if (currentfelt.getType(presentfieldplayer1) == "Betal indkomstskat"){
+                    userbutton = gui.getUserButtonPressed(
+                            "do you want to pay 10% of your money og 200?",
+                            "pay 10%", "pay 200"
+                    );
+                    if (userbutton == "pay 10%"){
+                        player1.AddToSaldo(-(player1.GetSaldo()/10));
+                        player1gui.setBalance(player1.GetSaldo());
+                    }
+                    else {
+                        player1.AddToSaldo(-200);
+                        player1gui.setBalance(player1.GetSaldo());
+                    }
                 }
             }
         }
