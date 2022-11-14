@@ -49,6 +49,7 @@ public class Main {
                     if (currentfelt.getOwnershipStatus(presentfieldplayer1) == false){
                         gui.showMessage("you have to pay for rent, because the place is already owned");
                         player1.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
+
                     }
 
                 }
