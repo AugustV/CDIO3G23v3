@@ -19,13 +19,13 @@ public class Main {
         int playernumber = Integer.parseInt(userbutton);
         if (playernumber == 2){
             String player1name = gui.getUserString("Enter the first players name");
-            Player player1 = new Player(player1name, 2000, 0);
+            Player player1 = new Player(player1name, 20000, 0);
             String player2name = gui.getUserString("Enter the second players name");
-            Player player2 = new Player(player2name, 2000, 0);
+            Player player2 = new Player(player2name, 20000, 0);
             Turn1die player1tur = new Turn1die();
             Turn1die player2tur = new Turn1die();
-            GUI_Player player1gui = new GUI_Player( player1name, 2000);
-            GUI_Player player2gui = new GUI_Player( player2name, 2000);
+            GUI_Player player1gui = new GUI_Player( player1name, 20000);
+            GUI_Player player2gui = new GUI_Player( player2name, 20000);
             gui.addPlayer(player1gui);
             gui.addPlayer(player2gui);
             GUI_Field field = gui.getFields()[0];
@@ -39,9 +39,10 @@ public class Main {
                 gui.showMessage("you've got " + roll1);
                 int presentfieldplayer1pre = player1.AddToFelt(roll1);
                 int presentfieldplayer1;
-                if (presentfieldplayer1pre > 40){
+                if (presentfieldplayer1pre > 39){
                      presentfieldplayer1 = presentfieldplayer1pre - 40;
                     presentfieldplayer1pre = presentfieldplayer1;
+                    player1.AddToFelt(-40);
                 }else presentfieldplayer1 = presentfieldplayer1pre;
                 gui.showMessage("that means you've move to felt " + player1.GetFelt());
                 field = gui.getFields()[presentfieldplayer1];
@@ -55,7 +56,6 @@ public class Main {
                         gui.showMessage("you have to pay for rent, because the place is already owned");
                         player1.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
                         player1gui.setBalance(player1.GetSaldo());
-
                     }
 
                 }
