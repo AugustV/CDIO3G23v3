@@ -37,7 +37,12 @@ public class Main {
                 int roll1 = 1; //player1tur.tur();
                 gui.setDie(roll1);
                 gui.showMessage("you've got " + roll1);
-                int presentfieldplayer1 = player1.AddToFelt(roll1);
+                int presentfieldplayer1pre = player1.AddToFelt(roll1);
+                int presentfieldplayer1;
+                if (presentfieldplayer1pre > 40){
+                     presentfieldplayer1 = presentfieldplayer1pre - 40;
+                    presentfieldplayer1pre = presentfieldplayer1;
+                }else presentfieldplayer1 = presentfieldplayer1pre;
                 gui.showMessage("that means you've move to felt " + player1.GetFelt());
                 field = gui.getFields()[presentfieldplayer1];
                 player1gui.getCar().setPosition(field);
