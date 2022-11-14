@@ -26,7 +26,7 @@ public class Main {
             Turn1die player2tur = new Turn1die();
             GUI_Player player1gui = new GUI_Player( player1name, 20000);
             GUI_Player player2gui = new GUI_Player( player2name, 20000);
-            gui.addPlayer(player1gui);
+
             gui.addPlayer(player2gui);
             GUI_Field field = gui.getFields()[0];
             player1gui.getCar().setPosition(field);
