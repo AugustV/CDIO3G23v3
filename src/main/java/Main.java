@@ -34,7 +34,7 @@ public class Main {
             gui.showMessage(player1name + " starts");
             while (player1gui.getBalance() > 0 && player2gui.getBalance() > 0 ){
                 gui.showMessage("it is " + player1name + " turn");
-                int roll1 = 1; //player1tur.tur();
+                int roll1 = player1tur.tur();
                 gui.setDie(roll1);
                 gui.showMessage("you've got " + roll1);
                 int presentfieldplayer1pre = player1.AddToFelt(roll1);
