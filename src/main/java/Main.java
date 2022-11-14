@@ -19,9 +19,9 @@ public class Main {
         int playernumber = Integer.parseInt(userbutton);
         if (playernumber == 2){
             String player1name = gui.getUserString("Enter the first players name");
-            Player player1 = new Player(player1name, 20, 0);
+            Player player1 = new Player(player1name, 2000, 0);
             String player2name = gui.getUserString("Enter the second players name");
-            Player player2 = new Player(player2name, 20, 0);
+            Player player2 = new Player(player2name, 2000, 0);
             Turn1die player1tur = new Turn1die();
             Turn1die player2tur = new Turn1die();
             GUI_Player player1gui = new GUI_Player( player1name, 20);
@@ -49,6 +49,7 @@ public class Main {
                     if (currentfelt.getOwnershipStatus(presentfieldplayer1) == false){
                         gui.showMessage("you have to pay for rent, because the place is already owned");
                         player1.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
+                        player1gui.setBalance(player1.GetSaldo());
 
                     }
 
