@@ -52,10 +52,17 @@ public class Main {
 
               System.out.println(currentfelt);
                 if (currentfelt.getType(presentfieldplayer1) == "Ejendom"){
-                    if (currentfelt.getOwnershipStatus(presentfieldplayer1) == false){
+                    if (currentfelt.getOwnershipStatus(presentfieldplayer1)){
                         gui.showMessage("you have to pay for rent, because the place is already owned");
                         player1.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
                         player1gui.setBalance(player1.GetSaldo());
+                    }
+                    if (currentfelt.getOwnershipStatus(presentfieldplayer1) == false){
+                        userbutton = gui.getUserButtonPressed(
+                                "do you want to buy the property or do you want to pay for rent?",
+                                "buy the property", "pay for rent"
+                        );
+                        //if (userbutton = "")
                     }
 
                 }
