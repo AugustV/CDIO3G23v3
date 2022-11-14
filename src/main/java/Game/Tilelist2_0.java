@@ -61,4 +61,8 @@ public class Tilelist2_0 {
         return single_instance;
 
     }
+    public int getSalesprice(int i) {return liste2_0[i].getSalesprice();}
+
+    public void setOwner(String newOwner,int i){liste2_0[i].setOwner(newOwner);}
+
 }

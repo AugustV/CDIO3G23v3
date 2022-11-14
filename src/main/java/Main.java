@@ -3,6 +3,7 @@ import Game.Tile2_0;
 import Game.Tilelist2_0;
 import Game.Turn1die;
 import gui_fields.GUI_Field;
+import gui_fields.GUI_Ownable;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
 
@@ -40,7 +41,7 @@ public class Main {
                 int presentfieldplayer1pre = player1.AddToFelt(roll1);
                 int presentfieldplayer1;
                 if (presentfieldplayer1pre > 39){
-                     presentfieldplayer1 = presentfieldplayer1pre - 40;
+                    presentfieldplayer1 = presentfieldplayer1pre - 40;
                     presentfieldplayer1pre = presentfieldplayer1;
                     player1.AddToFelt(-40);
                 }else presentfieldplayer1 = presentfieldplayer1pre;
@@ -62,7 +63,18 @@ public class Main {
                                 "do you want to buy the property or do you want to pay for rent?",
                                 "buy the property", "pay for rent"
                         );
-                        //if (userbutton = "")
+                        if (userbutton == "buy the property"){
+                            player1.AddToSaldo(currentfelt.getSalesprice(presentfieldplayer1));
+                            player1gui.setBalance(player1.GetSaldo());
+                            currentfelt.setOwner(player1name,presentfieldplayer1);
+                            GUI_Ownable ownable = (GUI_Ownable) field;
+                            ownable.setOwnerName(player1name);
+
+                        }
+                        if (userbutton == "pay for rent"){
+                            player1.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
+                            player1gui.setBalance(player1.GetSaldo());
+                        }
                     }
 
                 }

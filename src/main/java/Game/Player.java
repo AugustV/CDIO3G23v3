@@ -44,4 +44,5 @@ public class Player {
         felt = felt + ammount;
         return felt;
     }
+
 }
