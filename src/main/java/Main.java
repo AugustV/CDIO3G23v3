@@ -34,12 +34,12 @@ public class Main {
             player2gui.getCar().setPosition(field);
             gui.showMessage(player1name + " starts");
             while (player1gui.getBalance() > 0 && player2gui.getBalance() > 0 ){
-                if (player1.getFængselstatus() == true){
+                if (player1.getFængselstatus()){
                     gui.showMessage(player1name + " you're in prison, so you have to wait a round");
                     player1.setFængselstatusFalse();
                 } else {
                     gui.showMessage("it is " + player1name + " turn");
-                    int roll1 = 10; //player1tur.tur();
+                    int roll1 = player1tur.tur();
                     gui.setDie(roll1);
                     gui.showMessage("you've got " + roll1);
                     int presentfieldplayer1pre = player1.AddToFelt(roll1);
@@ -201,10 +201,8 @@ public class Main {
                         gui.showMessage("you need to wait a round before you can start again");
                         player2.setFængselstatusTrue();
                     }
-
                 }
             }
-
         }
         if (playernumber == 3){
             String player1name = "";
@@ -229,12 +227,12 @@ public class Main {
             player3gui.getCar().setPosition(field);
             gui.showMessage(player1name + " starts");
             while (player1gui.getBalance() > 0 && player2gui.getBalance() > 0 && player3gui.getBalance() > 0 ){
-                if (player1.getFængselstatus() == true){
+                if (player1.getFængselstatus()){
                     gui.showMessage(player1name + " you're in prison, so you have to wait a round");
                     player1.setFængselstatusFalse();
                 } else {
                     gui.showMessage("it is " + player1name + " turn");
-                    int roll1 = 10; //player1tur.tur();
+                    int roll1 = player1tur.tur();
                     gui.setDie(roll1);
                     gui.showMessage("you've got " + roll1);
                     int presentfieldplayer1pre = player1.AddToFelt(roll1);
@@ -260,12 +258,7 @@ public class Main {
                                 gui.showMessage("you have to pay for rent, because the place is already owned");
                                 player1.AddToSaldo(-currentfelt.getRent(presentfieldplayer1));
                                 player1gui.setBalance(player1.GetSaldo());
-                                if (currentfelt.getOwner(presentfieldplayer1) == player2name){
-                                    player2.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
-                                }
-                                else
-                                    player3.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
-
+                                player2.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
                             }
                             if (currentfelt.getOwner(presentfieldplayer1) == player1name){
                                 gui.showMessage("you own this place, so you don't have to pay rent");
@@ -313,12 +306,12 @@ public class Main {
                             player1gui.setBalance(player1.GetSaldo());
                         }
                     }
-                    if (currentfelt.getType(presentfieldplayer1) == "fængsel"){
+                    if (currentfelt.getType(presentfieldplayer1) == "Fængsel"){
                         gui.showMessage("you need to wait a round before you can start again");
                         player1.setFængselstatusTrue();
                     }
                 }
-                if (player2.getFængselstatus() == true){
+                if (player2.getFængselstatus()){
                     gui.showMessage(player2name + " you're in prison, so you have to wait a round");
                     player2.setFængselstatusFalse();
                 } else {
@@ -349,11 +342,7 @@ public class Main {
                                 gui.showMessage("you have to pay for rent, because the place is already owned");
                                 player2.AddToSaldo(-currentfelt.getRent(presentfieldplayer2));
                                 player2gui.setBalance(player2.GetSaldo());
-                                if (currentfelt.getOwner(presentfieldplayer2) == player1name){
-                                    player1.AddToSaldo(currentfelt.getRent(presentfieldplayer2));
-                                }
-                                else
-                                    player3.AddToSaldo(currentfelt.getRent(presentfieldplayer2));
+                                player1.AddToSaldo(currentfelt.getRent(presentfieldplayer2));
                             }
                             if (currentfelt.getOwner(presentfieldplayer2) == player2name){
                                 gui.showMessage("you own this place, so you don't have to pay rent");
@@ -405,9 +394,8 @@ public class Main {
                         gui.showMessage("you need to wait a round before you can start again");
                         player2.setFængselstatusTrue();
                     }
-
                 }
-                if (player3.getFængselstatus() == true){
+                if (player3.getFængselstatus()){
                     gui.showMessage(player3name + " you're in prison, so you have to wait a round");
                     player3.setFængselstatusFalse();
                 } else {
