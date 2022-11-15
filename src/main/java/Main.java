@@ -233,7 +233,7 @@ public class Main {
             while (player1gui.getBalance() > 0 && player2gui.getBalance() > 0 && player3gui.getBalance() > 0 ){
                 if (player1.getFængselstatus() == false){
                     gui.showMessage("it is " + player1name + " turn");
-                    int roll1 = player1tur.tur();
+                    int roll1 = 10; //player1tur.tur();
                     gui.setDie(roll1);
                     gui.showMessage("you've got " + roll1);
                     int presentfieldplayer1pre = player1.AddToFelt(roll1);
