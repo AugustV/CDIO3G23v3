@@ -3,6 +3,7 @@ import Game.Tile2_0;
 import Game.Tilelist2_0;
 import Game.Turn1die;
 import gui_fields.GUI_Field;
+import gui_fields.GUI_Ownable;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
 
@@ -40,7 +41,7 @@ public class Main {
                 int presentfieldplayer1pre = player1.AddToFelt(roll1);
                 int presentfieldplayer1;
                 if (presentfieldplayer1pre > 39){
-                     presentfieldplayer1 = presentfieldplayer1pre - 40;
+                    presentfieldplayer1 = presentfieldplayer1pre - 40;
                     presentfieldplayer1pre = presentfieldplayer1;
                     player1.AddToFelt(-40);
                 }else presentfieldplayer1 = presentfieldplayer1pre;
@@ -53,18 +54,83 @@ public class Main {
               System.out.println(currentfelt);
                 if (currentfelt.getType(presentfieldplayer1) == "Ejendom"){
                     if (currentfelt.getOwnershipStatus(presentfieldplayer1)){
-                        gui.showMessage("you have to pay for rent, because the place is already owned");
-                        player1.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
-                        player1gui.setBalance(player1.GetSaldo());
+                        if (currentfelt.getOwner(presentfieldplayer1) == player1name){
+                            gui.showMessage("you own this place, so you don't have to pay rent");
+                        }
+                        else {
+                            gui.showMessage("you have to pay for rent, because the place is already owned");
+                            player1.AddToSaldo(-currentfelt.getRent(presentfieldplayer1));
+                            player1gui.setBalance(player1.GetSaldo());
+                        }
+                        if (currentfelt.getOwner(presentfieldplayer1) == player1name){
+                            gui.showMessage("you own this place, so you don't have to pay rent");
+                        }
+                        else {
+                            gui.showMessage("you have to pay for rent, because the place is already owned");
+                            player1.AddToSaldo(-currentfelt.getRent(presentfieldplayer1));
+                            player1gui.setBalance(player1.GetSaldo());
+                        }
                     }
                     if (currentfelt.getOwnershipStatus(presentfieldplayer1) == false){
                         userbutton = gui.getUserButtonPressed(
                                 "do you want to buy the property or do you want to pay for rent?",
                                 "buy the property", "pay for rent"
                         );
-                        //if (userbutton = "")
+                        if (userbutton == "buy the property"){
+                            player1.AddToSaldo(-currentfelt.getSalesprice(presentfieldplayer1));
+                            player1gui.setBalance(player1.GetSaldo());
+                            currentfelt.setOwner(player1name,presentfieldplayer1);
+                            GUI_Ownable ownable = (GUI_Ownable) field;
+                            ownable.setOwnerName(player1name);
+                        }
+                        if (userbutton == "pay for rent"){
+                            player1.AddToSaldo(-currentfelt.getRent(presentfieldplayer1));
+                            player1gui.setBalance(player1.GetSaldo());
+                        }
                     }
 
+                }
+                if (currentfelt.getType(presentfieldplayer1) == "payment"){
+                    gui.showMessage("you have to pay " + currentfelt.getRent(presentfieldplayer1));
+                    player1.AddToSaldo(-currentfelt.getRent(presentfieldplayer1));
+                    player1gui.setBalance(player1.GetSaldo());
+                }
+                if (currentfelt.getType(presentfieldplayer1) == "Betal indkomstskat"){
+                    userbutton = gui.getUserButtonPressed(
+                            "do you want to pay 10% of your money og 200?",
+                            "pay 10%", "pay 200"
+                    );
+                    if (userbutton == "pay 10%"){
+                        player1.AddToSaldo(-(player1.GetSaldo()/10));
+                        player1gui.setBalance(player1.GetSaldo());
+                    }
+                    else {
+                        player1.AddToSaldo(-200);
+                        player1gui.setBalance(player1.GetSaldo());
+                    }
+                }
+                if (currentfelt.getType(presentfieldplayer1) == "fængsel"){
+                    gui.showMessage("you need to wait a round before you can start again");
+
+                }
+                if (currentfelt.getType(presentfieldplayer1) == "payment"){
+                    gui.showMessage("you have to pay " + currentfelt.getRent(presentfieldplayer1));
+                    player1.AddToSaldo(-currentfelt.getRent(presentfieldplayer1));
+                    player1gui.setBalance(player1.GetSaldo());
+                }
+                if (currentfelt.getType(presentfieldplayer1) == "Betal indkomstskat"){
+                    userbutton = gui.getUserButtonPressed(
+                            "do you want to pay 10% of your money og 200?",
+                            "pay 10%", "pay 200"
+                    );
+                    if (userbutton == "pay 10%"){
+                        player1.AddToSaldo(-(player1.GetSaldo()/10));
+                        player1gui.setBalance(player1.GetSaldo());
+                    }
+                    else {
+                        player1.AddToSaldo(-200);
+                        player1gui.setBalance(player1.GetSaldo());
+                    }
                 }
             }
         }

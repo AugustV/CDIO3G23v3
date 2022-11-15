@@ -5,6 +5,7 @@ public class Player {
     private int saldo;
     public String navn;
     private int felt;
+    private int fængselstatus;
 
     /**
      *
@@ -15,6 +16,7 @@ public class Player {
         this.navn = n;
         this.saldo = saldo;
         this.felt = felt;
+        fængselstatus = 0;
     }
 
     /**
@@ -43,5 +45,14 @@ public class Player {
     public int AddToFelt (int ammount){
         felt = felt + ammount;
         return felt;
+    }
+
+    public int getFængselstatus() {
+        return fængselstatus;
+    }
+
+    public int addToFængselstatus(int yes){
+        fængselstatus = fængselstatus + yes;
+        return fængselstatus;
     }
 }
