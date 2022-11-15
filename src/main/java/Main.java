@@ -37,10 +37,9 @@ public class Main {
                 if (player1.getFængselstatus() == true){
                     gui.showMessage(player1name + " you're in prison, so you have to wait a round");
                     player1.setFængselstatusFalse();
-                }
-                if (player1.getFængselstatus() == false){
+                } else {
                     gui.showMessage("it is " + player1name + " turn");
-                    int roll1 = player1tur.tur();
+                    int roll1 = 10; //player1tur.tur();
                     gui.setDie(roll1);
                     gui.showMessage("you've got " + roll1);
                     int presentfieldplayer1pre = player1.AddToFelt(roll1);
@@ -119,11 +118,10 @@ public class Main {
                         player1.setFængselstatusTrue();
                     }
                 }
-                if (player2.getFængselstatus() == true){
+                if (player2.getFængselstatus()){
                     gui.showMessage(player2name + " you're in prison, so you have to wait a round");
                     player2.setFængselstatusFalse();
-                }
-                if (player2.getFængselstatus() == false){
+                } else {
                     gui.showMessage("it is " + player2name + " turn");
                     int roll2 = player2tur.tur();
                     gui.setDie(roll2);
@@ -234,8 +232,7 @@ public class Main {
                 if (player1.getFængselstatus() == true){
                     gui.showMessage(player1name + " you're in prison, so you have to wait a round");
                     player1.setFængselstatusFalse();
-                }
-                if (player1.getFængselstatus() == false){
+                } else {
                     gui.showMessage("it is " + player1name + " turn");
                     int roll1 = 10; //player1tur.tur();
                     gui.setDie(roll1);
@@ -324,8 +321,7 @@ public class Main {
                 if (player2.getFængselstatus() == true){
                     gui.showMessage(player2name + " you're in prison, so you have to wait a round");
                     player2.setFængselstatusFalse();
-                }
-                if (player2.getFængselstatus() == false){
+                } else {
                     gui.showMessage("it is " + player2name + " turn");
                     int roll2 = player2tur.tur();
                     gui.setDie(roll2);
@@ -414,8 +410,7 @@ public class Main {
                 if (player3.getFængselstatus() == true){
                     gui.showMessage(player3name + " you're in prison, so you have to wait a round");
                     player3.setFængselstatusFalse();
-                }
-                if (player3.getFængselstatus() == false){
+                } else {
                     gui.showMessage("it is " + player2name + " turn");
                     int roll3 = player2tur.tur();
                     gui.setDie(roll3);
