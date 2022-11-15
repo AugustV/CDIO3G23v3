@@ -79,7 +79,7 @@ public final class GUI_Car extends Observable {
      * and a random color.
      */
     public GUI_Car(){
-        this(null, null, Type.CAR, Pattern.FILL);
+        this(null, null, Type.UFO, Pattern.FILL);
     }
 
 
