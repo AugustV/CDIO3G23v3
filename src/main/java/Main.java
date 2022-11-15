@@ -49,6 +49,7 @@ public class Main {
                 field = gui.getFields()[presentfieldplayer1];
                 player1gui.getCar().setPosition(field);
                 gui.showMessage("you've landed on " + field.getTitle());
+
                 Tilelist2_0 currentfelt = Tilelist2_0.getInstance();
 
               System.out.println(currentfelt);

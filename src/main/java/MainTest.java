@@ -11,8 +11,10 @@ class MainTest {
     @org.junit.jupiter.api.Test
     void arrayoverflowtest() {
         String player1name = "Test";
-        int roundsonboard = 0;
-        int movesmade = 0;
+        int roundsonboard1 = 0;
+        int movesmade1 = 0;
+        int roundsonboard2 = 0;
+        int movesmade2 = 0;
         GUI gui = new GUI();
         GUI_Field field = gui.getFields()[0];
         GUI_Player player1gui = new GUI_Player( player1name, 20000);
@@ -26,6 +28,7 @@ class MainTest {
 
 
        // gui.showMessage("it is " + player1name + " turn");
+        System.out.println("Test for moving 1 step at a time.");
         for(int i = 0; i < 100000000; i++) {
             int roll1 = 1;
            // gui.setDie(roll1);
@@ -36,17 +39,39 @@ class MainTest {
                 presentfieldplayer1 = presentfieldplayer1pre - 40;
                 presentfieldplayer1pre = presentfieldplayer1;
                 player1.AddToFelt(-40);
-                roundsonboard++;
+                roundsonboard1++;
             } else presentfieldplayer1 = presentfieldplayer1pre;
            // gui.showMessage("that means you've move to felt " + player1.GetFelt());
             field = gui.getFields()[presentfieldplayer1];
             player1gui.getCar().setPosition(field);
-            movesmade++;
+            movesmade1++;
          //   gui.showMessage("you've landed on " + field.getTitle());
 
         }
-        System.out.println("how many times the car moved = " + movesmade);
-        System.out.println("how many complete rounds there has been = " + roundsonboard);
+        System.out.println("how many times the car moved = " + movesmade1);
+        System.out.println("how many complete rounds there has been = " + roundsonboard1);
 
+        System.out.println("Test for moving 2 step at a time.");
+        for(int  i = 0; i < 100000000; i++) {
+            int roll1 = 2;
+            // gui.setDie(roll1);
+            //  gui.showMessage("you've got " + roll1);
+            int presentfieldplayer1pre = player1.AddToFelt(roll1);
+            int presentfieldplayer1;
+            if (presentfieldplayer1pre > 39) {
+                presentfieldplayer1 = presentfieldplayer1pre - 40;
+                presentfieldplayer1pre = presentfieldplayer1;
+                player1.AddToFelt(-40);
+                roundsonboard2++;
+            } else presentfieldplayer1 = presentfieldplayer1pre;
+            // gui.showMessage("that means you've move to felt " + player1.GetFelt());
+            field = gui.getFields()[presentfieldplayer1];
+            player1gui.getCar().setPosition(field);
+            movesmade2++;
+            //   gui.showMessage("you've landed on " + field.getTitle());
+
+        }
+        System.out.println("how many times the car moved = " + movesmade2);
+        System.out.println("how many complete rounds there has been = " + roundsonboard2);
     }
 }
