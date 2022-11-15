@@ -1,12 +1,9 @@
 package Game;
-
 public class Player {
-
     private int saldo;
     public String navn;
     private int felt;
-    private int fængselstatus;
-
+    private boolean fængselstatus;
     /**
      *
      * @param n This allows the player to get a personal name
@@ -16,9 +13,8 @@ public class Player {
         this.navn = n;
         this.saldo = saldo;
         this.felt = felt;
-        fængselstatus = 0;
+        fængselstatus = false;
     }
-
     /**
      * We told the program each tile has a value, in this section we ask the program to tell us what saldo is before rolling the dices
      * @return The program returns the saldo
@@ -26,7 +22,6 @@ public class Player {
     public int GetSaldo (){
         return this.saldo;
     }
-
     /**
      *
      * @param ammount This section adds the value of the tile + the saldo
@@ -39,20 +34,20 @@ public class Player {
     public String toString (){
         return this.navn;
     }
-
     public int GetFelt () {return this.felt;}
-
     public int AddToFelt (int ammount){
         felt = felt + ammount;
         return felt;
     }
-
-    public int getFængselstatus() {
+    public boolean getFængselstatus() {
         return fængselstatus;
     }
-
-    public int addToFængselstatus(int yes){
-        fængselstatus = fængselstatus + yes;
+    public boolean setFængselstatusTrue(){
+        fængselstatus = true;
+        return fængselstatus;
+    }
+    public boolean setFængselstatusFalse(){
+        fængselstatus = false;
         return fængselstatus;
     }
 }
