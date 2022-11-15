@@ -40,7 +40,7 @@ public class Tilelist2_0 {
         liste2_0[i++] = new Tile2_0("Ejendom", 260 , 260 );
         liste2_0[i++] = new Tile2_0("payment", 150 , 150 );
         liste2_0[i++] = new Tile2_0("Ejendom", 280 , 280);
-        liste2_0[i++] = new Tile2_0("Gå i fængsel", 0 , 0 );
+        liste2_0[i++] = new Tile2_0("Fængsel", 0 , 0 );
         liste2_0[i++] = new Tile2_0("Ejendom", 300 , 300 );
         liste2_0[i++] = new Tile2_0("Ejendom", 300 , 300 );
         liste2_0[i++] = new Tile2_0("Prøv lykken", 0 , 0 );
