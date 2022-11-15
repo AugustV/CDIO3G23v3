@@ -45,8 +45,8 @@ class MainTest {
          //   gui.showMessage("you've landed on " + field.getTitle());
 
         }
-        System.out.println(movesmade);
-        System.out.println(roundsonboard);
+        System.out.println("how many times the car moved = " + movesmade);
+        System.out.println("how many complete rounds there has been = " + roundsonboard);
 
     }
 }
