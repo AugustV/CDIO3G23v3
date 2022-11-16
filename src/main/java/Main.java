@@ -20,13 +20,13 @@ public class Main {
         int playernumber = Integer.parseInt(userbutton);
         if (playernumber == 2) {
             String player1name = gui.getUserString("Enter the first players name");
-            Player player1 = new Player(player1name, 4000, 0);
+            Player player1 = new Player(player1name, 20, 0);
             String player2name = gui.getUserString("Enter the second players name");
-            Player player2 = new Player(player2name, 4000, 0);
+            Player player2 = new Player(player2name, 20, 0);
             Turn1die player1tur = new Turn1die();
             Turn1die player2tur = new Turn1die();
-            GUI_Player player1gui = new GUI_Player(player1name, 4000);
-            GUI_Player player2gui = new GUI_Player(player2name, 4000);
+            GUI_Player player1gui = new GUI_Player(player1name, 20);
+            GUI_Player player2gui = new GUI_Player(player2name, 20);
             gui.addPlayer(player1gui);
             gui.addPlayer(player2gui);
             GUI_Field field = gui.getFields()[0];
@@ -105,7 +105,7 @@ public class Main {
                             player1.AddToSaldo(-(player1.GetSaldo() / 10));
                             player1gui.setBalance(player1.GetSaldo());
                         } else {
-                            player1.AddToSaldo(-200);
+                            player1.AddToSaldo(-2);
                             player1gui.setBalance(player1.GetSaldo());
                         }
                     }
@@ -185,7 +185,7 @@ public class Main {
                             player2.AddToSaldo(-(player2.GetSaldo() / 10));
                             player2gui.setBalance(player2.GetSaldo());
                         } else {
-                            player2.AddToSaldo(-200);
+                            player2.AddToSaldo(-2);
                             player2gui.setBalance(player2.GetSaldo());
                         }
                     }
@@ -199,17 +199,17 @@ public class Main {
         if (playernumber == 3) {
             String player1name = "";
             player1name = gui.getUserString("Enter the first players name");
-            Player player1 = new Player(player1name, 20000, 0);
+            Player player1 = new Player(player1name, 18, 0);
             String player2name = gui.getUserString("Enter the second players name");
-            Player player2 = new Player(player2name, 20000, 0);
+            Player player2 = new Player(player2name, 18, 0);
             String player3name = gui.getUserString("Enter the first players name");
-            Player player3 = new Player(player3name, 20000, 0);
+            Player player3 = new Player(player3name, 18, 0);
             Turn1die player1tur = new Turn1die();
             Turn1die player2tur = new Turn1die();
             Turn1die player3tur = new Turn1die();
-            GUI_Player player1gui = new GUI_Player(player1name, 20000);
-            GUI_Player player2gui = new GUI_Player(player2name, 20000);
-            GUI_Player player3gui = new GUI_Player(player3name, 20000);
+            GUI_Player player1gui = new GUI_Player(player1name, 18);
+            GUI_Player player2gui = new GUI_Player(player2name, 18);
+            GUI_Player player3gui = new GUI_Player(player3name, 18);
             gui.addPlayer(player1gui);
             gui.addPlayer(player2gui);
             gui.addPlayer(player3gui);
@@ -290,7 +290,7 @@ public class Main {
                             player1.AddToSaldo(-(player1.GetSaldo() / 10));
                             player1gui.setBalance(player1.GetSaldo());
                         } else {
-                            player1.AddToSaldo(-200);
+                            player1.AddToSaldo(-2);
                             player1gui.setBalance(player1.GetSaldo());
                         }
                     }
@@ -370,7 +370,7 @@ public class Main {
                             player2.AddToSaldo(-(player2.GetSaldo() / 10));
                             player2gui.setBalance(player2.GetSaldo());
                         } else {
-                            player2.AddToSaldo(-200);
+                            player2.AddToSaldo(-2);
                             player2gui.setBalance(player2.GetSaldo());
                         }
                     }
@@ -453,7 +453,7 @@ public class Main {
                             player3.AddToSaldo(-(player3.GetSaldo() / 10));
                             player3gui.setBalance(player3.GetSaldo());
                         } else {
-                            player3.AddToSaldo(-200);
+                            player3.AddToSaldo(-2);
                             player3gui.setBalance(player3.GetSaldo());
                         }
                     }
@@ -469,21 +469,21 @@ public class Main {
         if (playernumber == 4) {
             String player1name = "";
             player1name = gui.getUserString("Enter the first players name");
-            Player player1 = new Player(player1name, 20000, 0);
+            Player player1 = new Player(player1name, 16, 0);
             String player2name = gui.getUserString("Enter the second players name");
-            Player player2 = new Player(player2name, 20000, 0);
+            Player player2 = new Player(player2name, 16, 0);
             String player3name = gui.getUserString("Enter the third players name");
-            Player player3 = new Player(player3name, 20000, 0);
+            Player player3 = new Player(player3name, 16, 0);
             String player4name = gui.getUserString("Enter fourth players name");
-            Player player4 = new Player(player4name, 20000, 0);
+            Player player4 = new Player(player4name, 16, 0);
             Turn1die player1tur = new Turn1die();
             Turn1die player2tur = new Turn1die();
             Turn1die player3tur = new Turn1die();
             Turn1die player4tur = new Turn1die();
-            GUI_Player player1gui = new GUI_Player(player1name, 20000);
-            GUI_Player player2gui = new GUI_Player(player2name, 20000);
-            GUI_Player player3gui = new GUI_Player(player3name, 20000);
-            GUI_Player player4gui = new GUI_Player(player4name, 20000);
+            GUI_Player player1gui = new GUI_Player(player1name, 16);
+            GUI_Player player2gui = new GUI_Player(player2name, 16);
+            GUI_Player player3gui = new GUI_Player(player3name, 16);
+            GUI_Player player4gui = new GUI_Player(player4name, 16);
             gui.addPlayer(player1gui);
             gui.addPlayer(player2gui);
             gui.addPlayer(player3gui);
@@ -566,7 +566,7 @@ public class Main {
                             player1.AddToSaldo(-(player1.GetSaldo() / 10));
                             player1gui.setBalance(player1.GetSaldo());
                         } else {
-                            player1.AddToSaldo(-200);
+                            player1.AddToSaldo(-2);
                             player1gui.setBalance(player1.GetSaldo());
                         }
                     }
@@ -646,7 +646,7 @@ public class Main {
                             player2.AddToSaldo(-(player2.GetSaldo() / 10));
                             player2gui.setBalance(player2.GetSaldo());
                         } else {
-                            player2.AddToSaldo(-200);
+                            player2.AddToSaldo(-2);
                             player2gui.setBalance(player2.GetSaldo());
                         }
                     }
@@ -729,7 +729,7 @@ public class Main {
                             player3.AddToSaldo(-(player3.GetSaldo() / 10));
                             player3gui.setBalance(player3.GetSaldo());
                         } else {
-                            player3.AddToSaldo(-200);
+                            player3.AddToSaldo(-2);
                             player3gui.setBalance(player3.GetSaldo());
                         }
                     }
@@ -809,7 +809,7 @@ public class Main {
                                     player3.AddToSaldo(-(player3.GetSaldo() / 10));
                                     player3gui.setBalance(player3.GetSaldo());
                                 } else {
-                                    player3.AddToSaldo(-200);
+                                    player3.AddToSaldo(-2);
                                     player3gui.setBalance(player3.GetSaldo());
                                 }
                             }
