@@ -10,30 +10,30 @@ public class Tilelist2_0 {
         liste2_0 = new Tile2_0[24];
         int i = 0;
         // Vi har valgt at skrive [i++] for at gøre kodning hurtigere
-        liste2_0[i++] = new Tile2_0("Start",200,0);
-        liste2_0[i++] = new Tile2_0("Ejendom", 60,60);
-        liste2_0[i++] = new Tile2_0("Ejendom", 60 , 60 );
+        liste2_0[i++] = new Tile2_0("Start",-2,0);
+        liste2_0[i++] = new Tile2_0("Ejendom", 1,1);
+        liste2_0[i++] = new Tile2_0("Ejendom", 1 , 1 );
         liste2_0[i++] = new Tile2_0("Prøv lykken", 0 , 0);
-        liste2_0[i++] = new Tile2_0("Ejendom", 100 , 100 );
-        liste2_0[i++] = new Tile2_0("Ejendom", 100 , 100 );
+        liste2_0[i++] = new Tile2_0("Ejendom", 1 , 1 );
+        liste2_0[i++] = new Tile2_0("Ejendom", 1 , 1 );
         liste2_0[i++] = new Tile2_0("Fængsel", 0 , 0 );
-        liste2_0[i++] = new Tile2_0("Ejendom", 120 , 120 );
-        liste2_0[i++] = new Tile2_0("Ejendom", 120 , 120 );
-        liste2_0[i++] = new Tile2_0("Prøv lykken", 120 , 120 );
-        liste2_0[i++] = new Tile2_0("Ejendom", 140 , 140 );
-        liste2_0[i++] = new Tile2_0("Ejendom", 140 , 140 );
+        liste2_0[i++] = new Tile2_0("Ejendom", 2 , 2 );
+        liste2_0[i++] = new Tile2_0("Ejendom", 2 , 2 );
+        liste2_0[i++] = new Tile2_0("Prøv lykken", 0 , 0 );
+        liste2_0[i++] = new Tile2_0("Ejendom", 2 , 2 );
+        liste2_0[i++] = new Tile2_0("Ejendom", 2 , 2 );
         liste2_0[i++] = new Tile2_0("Helle", 0 , 0 );
-        liste2_0[i++] = new Tile2_0("Ejendom", 200 , 200 );
-        liste2_0[i++] = new Tile2_0("Ejendom", 200 , 200 );
+        liste2_0[i++] = new Tile2_0("Ejendom", 3 , 3 );
+        liste2_0[i++] = new Tile2_0("Ejendom", 3 , 3 );
         liste2_0[i++] = new Tile2_0("Prøv lykken", 0 , 0 );
-        liste2_0[i++] = new Tile2_0("Ejendom", 300 , 300 );
-        liste2_0[i++] = new Tile2_0("Ejendom", 300 , 300 );
+        liste2_0[i++] = new Tile2_0("Ejendom", 3 , 3 );
+        liste2_0[i++] = new Tile2_0("Ejendom", 3 , 3 );
         liste2_0[i++] = new Tile2_0("Fængsel", 0 ,     0 );
-        liste2_0[i++] = new Tile2_0("Ejendom", 320 , 320 );
-        liste2_0[i++] = new Tile2_0("Ejendom", 340 , 340 );
+        liste2_0[i++] = new Tile2_0("Ejendom", 4 , 4 );
+        liste2_0[i++] = new Tile2_0("Ejendom", 4 , 4 );
         liste2_0[i++] = new Tile2_0("Prøv lykken", 0 , 0 );
-        liste2_0[i++] = new Tile2_0("Ejendom", 350 , 350 );
-        liste2_0[i++] = new Tile2_0("Ejendom", 400 , 400 );
+        liste2_0[i++] = new Tile2_0("Ejendom", 5 , 5 );
+        liste2_0[i++] = new Tile2_0("Ejendom", 5 , 5 );
     }
     public String getType(int i) {return liste2_0[i].getType();}
     public String getOwner(int i) {return liste2_0[i].getOwner();}
