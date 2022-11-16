@@ -64,13 +64,7 @@ public class Main {
                                 player1.AddToSaldo(-currentfelt.getRent(presentfieldplayer1));
                                 player1gui.setBalance(player1.GetSaldo());
                                 player2.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
-                            }
-                            if (currentfelt.getOwner(presentfieldplayer1) == player1name) {
-                                gui.showMessage("you own this place, so you don't have to pay rent");
-                            } else {
-                                gui.showMessage("you have to pay for rent, because the place is already owned");
-                                player1.AddToSaldo(-currentfelt.getRent(presentfieldplayer1));
-                                player1gui.setBalance(player1.GetSaldo());
+                                player2gui.setBalance(player2.GetSaldo());
                             }
                         }
                         if (currentfelt.getOwnershipStatus(presentfieldplayer1) == false) {
@@ -144,13 +138,8 @@ public class Main {
                                 player2.AddToSaldo(-currentfelt.getRent(presentfieldplayer2));
                                 player2gui.setBalance(player2.GetSaldo());
                                 player1.AddToSaldo(currentfelt.getRent(presentfieldplayer2));
-                            }
-                            if (currentfelt.getOwner(presentfieldplayer2) == player2name) {
-                                gui.showMessage("you own this place, so you don't have to pay rent");
-                            } else {
-                                gui.showMessage("you have to pay for rent, because the place is already owned");
-                                player2.AddToSaldo(-currentfelt.getRent(presentfieldplayer2));
-                                player2gui.setBalance(player2.GetSaldo());
+                                player1gui.setBalance(player1.GetSaldo());
+
                             }
                         }
                         if (currentfelt.getOwnershipStatus(presentfieldplayer2) == false) {
@@ -248,14 +237,13 @@ public class Main {
                                 gui.showMessage("you have to pay for rent, because the place is already owned");
                                 player1.AddToSaldo(-currentfelt.getRent(presentfieldplayer1));
                                 player1gui.setBalance(player1.GetSaldo());
-                                player2.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
-                            }
-                            if (currentfelt.getOwner(presentfieldplayer1) == player1name) {
-                                gui.showMessage("you own this place, so you don't have to pay rent");
-                            } else {
-                                gui.showMessage("you have to pay for rent, because the place is already owned");
-                                player1.AddToSaldo(-currentfelt.getRent(presentfieldplayer1));
-                                player1gui.setBalance(player1.GetSaldo());
+                                if (currentfelt.getOwner(presentfieldplayer1) == player2name) {
+                                    player2.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
+                                    player2gui.setBalance(player2.GetSaldo());
+                                } else {
+                                    player3.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
+                                    player3gui.setBalance(player3.GetSaldo());
+                                }
                             }
                         }
                         if (currentfelt.getOwnershipStatus(presentfieldplayer1) == false) {
@@ -328,14 +316,13 @@ public class Main {
                                 gui.showMessage("you have to pay for rent, because the place is already owned");
                                 player2.AddToSaldo(-currentfelt.getRent(presentfieldplayer2));
                                 player2gui.setBalance(player2.GetSaldo());
-                                player1.AddToSaldo(currentfelt.getRent(presentfieldplayer2));
-                            }
-                            if (currentfelt.getOwner(presentfieldplayer2) == player2name) {
-                                gui.showMessage("you own this place, so you don't have to pay rent");
-                            } else {
-                                gui.showMessage("you have to pay for rent, because the place is already owned");
-                                player2.AddToSaldo(-currentfelt.getRent(presentfieldplayer2));
-                                player2gui.setBalance(player2.GetSaldo());
+                                if (currentfelt.getOwner(presentfieldplayer2) == player1name) {
+                                    player1.AddToSaldo(currentfelt.getRent(presentfieldplayer2));
+                                    player1gui.setBalance(player1.GetSaldo());
+                                } else {
+                                    player3.AddToSaldo(currentfelt.getRent(presentfieldplayer2));
+                                    player3gui.setBalance(player3.GetSaldo());
+                                }
                             }
                         }
                         if (currentfelt.getOwnershipStatus(presentfieldplayer2) == false) {
@@ -410,15 +397,11 @@ public class Main {
                                 player3gui.setBalance(player3.GetSaldo());
                                 if (currentfelt.getOwner(presentfieldplayer3) == player1name) {
                                     player1.AddToSaldo(currentfelt.getRent(presentfieldplayer3));
-                                } else
+                                    player1gui.setBalance(player3.GetSaldo());
+                                } else {
                                     player2.AddToSaldo(currentfelt.getRent(presentfieldplayer3));
-                            }
-                            if (currentfelt.getOwner(presentfieldplayer3) == player3name) {
-                                gui.showMessage("you own this place, so you don't have to pay rent");
-                            } else {
-                                gui.showMessage("you have to pay for rent, because the place is already owned");
-                                player3.AddToSaldo(-currentfelt.getRent(presentfieldplayer3));
-                                player3gui.setBalance(player3.GetSaldo());
+                                    player2gui.setBalance(player2.GetSaldo());
+                                }
                             }
                         }
                         if (currentfelt.getOwnershipStatus(presentfieldplayer3) == false) {
@@ -521,17 +504,20 @@ public class Main {
                             if (currentfelt.getOwner(presentfieldplayer1) == player1name) {
                                 gui.showMessage("you own this place, so you don't have to pay rent");
                             } else {
-                                gui.showMessage("you have to pay for rent, because the place is already owned");
                                 player1.AddToSaldo(-currentfelt.getRent(presentfieldplayer1));
                                 player1gui.setBalance(player1.GetSaldo());
-                                player2.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
-                            }
-                            if (currentfelt.getOwner(presentfieldplayer1) == player1name) {
-                                gui.showMessage("you own this place, so you don't have to pay rent");
-                            } else {
                                 gui.showMessage("you have to pay for rent, because the place is already owned");
-                                player1.AddToSaldo(-currentfelt.getRent(presentfieldplayer1));
-                                player1gui.setBalance(player1.GetSaldo());
+                                if (currentfelt.getOwner(presentfieldplayer1) == player2name) {
+                                    player2.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
+                                    player2gui.setBalance(player2.GetSaldo());
+                                }
+                                if (currentfelt.getOwner(presentfieldplayer1) == player3name) {
+                                    player3.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
+                                    player3gui.setBalance(player2.GetSaldo());
+                                } else {
+                                    player4.AddToSaldo(currentfelt.getRent(presentfieldplayer1));
+                                    player4gui.setBalance(player4.GetSaldo());
+                                }
                             }
                         }
                         if (currentfelt.getOwnershipStatus(presentfieldplayer1) == false) {
@@ -601,17 +587,17 @@ public class Main {
                             if (currentfelt.getOwner(presentfieldplayer2) == player2name) {
                                 gui.showMessage("you own this place, so you don't have to pay rent");
                             } else {
-                                gui.showMessage("you have to pay for rent, because the place is already owned");
-                                player2.AddToSaldo(-currentfelt.getRent(presentfieldplayer2));
-                                player2gui.setBalance(player2.GetSaldo());
-                                player1.AddToSaldo(currentfelt.getRent(presentfieldplayer2));
-                            }
-                            if (currentfelt.getOwner(presentfieldplayer2) == player2name) {
-                                gui.showMessage("you own this place, so you don't have to pay rent");
-                            } else {
-                                gui.showMessage("you have to pay for rent, because the place is already owned");
-                                player2.AddToSaldo(-currentfelt.getRent(presentfieldplayer2));
-                                player2gui.setBalance(player2.GetSaldo());
+                                if (currentfelt.getOwner(presentfieldplayer2) == player1name) {
+                                    player1.AddToSaldo(currentfelt.getRent(presentfieldplayer2));
+                                    player1gui.setBalance(player1.GetSaldo());
+                                }
+                                if (currentfelt.getOwner(presentfieldplayer2) == player3name) {
+                                    player3.AddToSaldo(currentfelt.getRent(presentfieldplayer2));
+                                    player3gui.setBalance(player3.GetSaldo());
+                                } else {
+                                    player4.AddToSaldo(currentfelt.getRent(presentfieldplayer2));
+                                    player4gui.setBalance(player4.GetSaldo());
+                                }
                             }
                         }
                         if (currentfelt.getOwnershipStatus(presentfieldplayer2) == false) {
@@ -686,144 +672,136 @@ public class Main {
                                 player3gui.setBalance(player3.GetSaldo());
                                 if (currentfelt.getOwner(presentfieldplayer3) == player1name) {
                                     player1.AddToSaldo(currentfelt.getRent(presentfieldplayer3));
-                                } else
+                                    player1gui.setBalance(player1.GetSaldo());
+                                }
+                                if (currentfelt.getOwner(presentfieldplayer3) == player2name) {
                                     player2.AddToSaldo(currentfelt.getRent(presentfieldplayer3));
+                                    player2gui.setBalance(player2.GetSaldo());
+
+                                } else {
+                                    player4.AddToSaldo(currentfelt.getRent(presentfieldplayer3));
+                                    player4gui.setBalance(player4.GetSaldo());
+                                }
                             }
-                            if (currentfelt.getOwner(presentfieldplayer3) == player3name) {
+                            if (currentfelt.getOwnershipStatus(presentfieldplayer3) == false) {
+                                userbutton = gui.getUserButtonPressed(
+                                        "do you want to buy the property or do you want to pay for rent?",
+                                        "buy the property", "pay for rent"
+                                );
+                                if (userbutton == "buy the property") {
+                                    player3.AddToSaldo(-currentfelt.getSalesprice(presentfieldplayer3));
+                                    player3gui.setBalance(player3.GetSaldo());
+                                    currentfelt.setOwner(player3name, presentfieldplayer3);
+                                    GUI_Ownable ownable = (GUI_Ownable) field;
+                                    ownable.setOwnerName(player3name);
+                                }
+                                if (userbutton == "pay for rent") {
+                                    player3.AddToSaldo(-currentfelt.getRent(presentfieldplayer3));
+                                    player3gui.setBalance(player3.GetSaldo());
+                                }
+                            }
+                        }
+                        if (currentfelt.getType(presentfieldplayer3) == "payment") {
+                            gui.showMessage("you have to pay " + currentfelt.getRent(presentfieldplayer3));
+                            player3.AddToSaldo(-currentfelt.getRent(presentfieldplayer3));
+                            player3gui.setBalance(player3.GetSaldo());
+                        }
+                        if (currentfelt.getType(presentfieldplayer3) == "Betal indkomstskat") {
+                            userbutton = gui.getUserButtonPressed(
+                                    "do you want to pay 10% of your money og 200?",
+                                    "pay 10%", "pay 200"
+                            );
+                            if (userbutton == "pay 10%") {
+                                player3.AddToSaldo(-(player3.GetSaldo() / 10));
+                                player3gui.setBalance(player3.GetSaldo());
+                            } else {
+                                player3.AddToSaldo(-200);
+                                player3gui.setBalance(player3.GetSaldo());
+                            }
+                        }
+                    }
+                }
+                if (player4.getFængselstatus()) {
+                    gui.showMessage(player3name + " you're in prison, so you have to wait a round");
+                    player4.setFængselstatusFalse();
+                } else {
+                    gui.showMessage("it is " + player4name + " turn");
+                    int roll4 = player4tur.tur();
+                    gui.setDie(roll4);
+                    gui.showMessage("you've got " + roll4);
+                    int presentfieldplayer4pre = player4.AddToFelt(roll4);
+                    int presentfieldplayer4;
+                    if (presentfieldplayer4pre > 23) {
+                        presentfieldplayer4 = presentfieldplayer4pre - 24;
+                        presentfieldplayer4pre = presentfieldplayer4;
+                        player4.AddToFelt(-24);
+                    } else presentfieldplayer4 = presentfieldplayer4pre;
+                    gui.showMessage("that means you've move to felt " + player4.GetFelt());
+                    field = gui.getFields()[presentfieldplayer4];
+                    player4gui.getCar().setPosition(field);
+                    gui.showMessage("you've landed on " + field.getTitle());
+                    Tilelist2_0 currentfelt = Tilelist2_0.getInstance();
+                    System.out.println(currentfelt);
+                    if (currentfelt.getType(presentfieldplayer4) == "Ejendom") {
+                        if (currentfelt.getOwnershipStatus(presentfieldplayer4)) {
+                            if (currentfelt.getOwner(presentfieldplayer4) == player4name) {
                                 gui.showMessage("you own this place, so you don't have to pay rent");
                             } else {
                                 gui.showMessage("you have to pay for rent, because the place is already owned");
-                                player3.AddToSaldo(-currentfelt.getRent(presentfieldplayer3));
-                                player3gui.setBalance(player3.GetSaldo());
-                            }
-                        }
-                        if (currentfelt.getOwnershipStatus(presentfieldplayer3) == false) {
-                            userbutton = gui.getUserButtonPressed(
-                                    "do you want to buy the property or do you want to pay for rent?",
-                                    "buy the property", "pay for rent"
-                            );
-                            if (userbutton == "buy the property") {
-                                player3.AddToSaldo(-currentfelt.getSalesprice(presentfieldplayer3));
-                                player3gui.setBalance(player3.GetSaldo());
-                                currentfelt.setOwner(player3name, presentfieldplayer3);
-                                GUI_Ownable ownable = (GUI_Ownable) field;
-                                ownable.setOwnerName(player3name);
-                            }
-                            if (userbutton == "pay for rent") {
-                                player3.AddToSaldo(-currentfelt.getRent(presentfieldplayer3));
-                                player3gui.setBalance(player3.GetSaldo());
-                            }
-                        }
-                    }
-                    if (currentfelt.getType(presentfieldplayer3) == "payment") {
-                        gui.showMessage("you have to pay " + currentfelt.getRent(presentfieldplayer3));
-                        player3.AddToSaldo(-currentfelt.getRent(presentfieldplayer3));
-                        player3gui.setBalance(player3.GetSaldo());
-                    }
-                    if (currentfelt.getType(presentfieldplayer3) == "Betal indkomstskat") {
-                        userbutton = gui.getUserButtonPressed(
-                                "do you want to pay 10% of your money og 200?",
-                                "pay 10%", "pay 200"
-                        );
-                        if (userbutton == "pay 10%") {
-                            player3.AddToSaldo(-(player3.GetSaldo() / 10));
-                            player3gui.setBalance(player3.GetSaldo());
-                        } else {
-                            player3.AddToSaldo(-200);
-                            player3gui.setBalance(player3.GetSaldo());
-                        }
-                    }
-                    if (currentfelt.getType(presentfieldplayer3) == "fængsel") {
-                        gui.showMessage("you need to wait a round before you can start again");
-                        player3.setFængselstatusTrue();
-                        if (player3.getFængselstatus()) {
-                            gui.showMessage(player3name + " you're in prison, so you have to wait a round");
-                            player3.setFængselstatusFalse();
-                        } else {
-                            gui.showMessage("it is " + player2name + " turn");
-                            int roll2 = player2tur.tur();
-                            gui.setDie(roll3);
-                            gui.showMessage("you've got " + roll3);
-                            presentfieldplayer3pre = player3.AddToFelt(roll3);
-                            int presentfieldplayer31 = presentfieldplayer3;
-                            if (presentfieldplayer3pre > 23) {
-                                presentfieldplayer3 = presentfieldplayer3pre - 24;
-                                presentfieldplayer3pre = presentfieldplayer3;
-                                player3.AddToFelt(-24);
-                            } else presentfieldplayer3 = presentfieldplayer3pre;
-                            gui.showMessage("that means you've move to felt " + player2.GetFelt());
-                            field = gui.getFields()[presentfieldplayer3];
-                            player3gui.getCar().setPosition(field);
-                            gui.showMessage("you've landed on " + field.getTitle());
-                            System.out.println(currentfelt);
-                            if (currentfelt.getType(presentfieldplayer3) == "Ejendom") {
-                                if (currentfelt.getOwnershipStatus(presentfieldplayer3)) {
-                                    if (currentfelt.getOwner(presentfieldplayer3) == player3name) {
-                                        gui.showMessage("you own this place, so you don't have to pay rent");
-                                    } else {
-                                        gui.showMessage("you have to pay for rent, because the place is already owned");
-                                        player3.AddToSaldo(-currentfelt.getRent(presentfieldplayer3));
-                                        player3gui.setBalance(player3.GetSaldo());
-                                        if (currentfelt.getOwner(presentfieldplayer3) == player1name) {
-                                            player1.AddToSaldo(currentfelt.getRent(presentfieldplayer3));
-                                        } else
-                                            player2.AddToSaldo(currentfelt.getRent(presentfieldplayer3));
-                                    }
-                                    if (currentfelt.getOwner(presentfieldplayer3) == player3name) {
-                                        gui.showMessage("you own this place, so you don't have to pay rent");
-                                    } else {
-                                        gui.showMessage("you have to pay for rent, because the place is already owned");
-                                        player3.AddToSaldo(-currentfelt.getRent(presentfieldplayer3));
-                                        player3gui.setBalance(player3.GetSaldo());
-                                    }
+                                player4.AddToSaldo(-currentfelt.getRent(presentfieldplayer4));
+                                player4gui.setBalance(player4.GetSaldo());
+                                if (currentfelt.getOwner(presentfieldplayer4) == player1name) {
+                                    player1.AddToSaldo(currentfelt.getRent(presentfieldplayer4));
+                                    player1gui.setBalance(player1.GetSaldo());
                                 }
-                                if (currentfelt.getOwnershipStatus(presentfieldplayer3) == false) {
-                                    userbutton = gui.getUserButtonPressed(
-                                            "do you want to buy the property or do you want to pay for rent?",
-                                            "buy the property", "pay for rent"
-                                    );
-                                    if (userbutton == "buy the property") {
-                                        player3.AddToSaldo(-currentfelt.getSalesprice(presentfieldplayer3));
-                                        player3gui.setBalance(player3.GetSaldo());
-                                        currentfelt.setOwner(player3name, presentfieldplayer3);
-                                        GUI_Ownable ownable = (GUI_Ownable) field;
-                                        ownable.setOwnerName(player3name);
-                                    }
-                                    if (userbutton == "pay for rent") {
-                                        player3.AddToSaldo(-currentfelt.getRent(presentfieldplayer3));
-                                        player3gui.setBalance(player3.GetSaldo());
-                                    }
-                                }
-                            }
-                            if (currentfelt.getType(presentfieldplayer3) == "payment") {
-                                gui.showMessage("you have to pay " + currentfelt.getRent(presentfieldplayer3));
-                                player3.AddToSaldo(-currentfelt.getRent(presentfieldplayer3));
-                                player3gui.setBalance(player3.GetSaldo());
-                            }
-                            if (currentfelt.getType(presentfieldplayer3) == "Betal indkomstskat") {
-                                userbutton = gui.getUserButtonPressed(
-                                        "do you want to pay 10% of your money og 200?",
-                                        "pay 10%", "pay 200"
-                                );
-                                if (userbutton == "pay 10%") {
-                                    player3.AddToSaldo(-(player3.GetSaldo() / 10));
-                                    player3gui.setBalance(player3.GetSaldo());
+                                if (currentfelt.getOwner(presentfieldplayer4) == player2name) {
+                                    player2.AddToSaldo(currentfelt.getRent(presentfieldplayer4));
+                                    player2gui.setBalance(player2.GetSaldo());
+
                                 } else {
-                                    player3.AddToSaldo(-200);
+                                    player3.AddToSaldo(currentfelt.getRent(presentfieldplayer4));
                                     player3gui.setBalance(player3.GetSaldo());
                                 }
                             }
-                            if (currentfelt.getType(presentfieldplayer3) == "fængsel") {
-                                gui.showMessage("you need to wait a round before you can start again");
-                                player3.setFængselstatusTrue();
-
+                            if (currentfelt.getOwnershipStatus(presentfieldplayer4) == false) {
+                                userbutton = gui.getUserButtonPressed(
+                                        "do you want to buy the property or do you want to pay for rent?",
+                                        "buy the property", "pay for rent"
+                                );
+                                if (userbutton == "buy the property") {
+                                    player4.AddToSaldo(-currentfelt.getSalesprice(presentfieldplayer4));
+                                    player4gui.setBalance(player4.GetSaldo());
+                                    currentfelt.setOwner(player4name, presentfieldplayer4);
+                                    GUI_Ownable ownable = (GUI_Ownable) field;
+                                    ownable.setOwnerName(player4name);
+                                }
+                                if (userbutton == "pay for rent") {
+                                    player4.AddToSaldo(-currentfelt.getRent(presentfieldplayer4));
+                                    player4gui.setBalance(player4.GetSaldo());
+                                }
                             }
                         }
-
+                        if (currentfelt.getType(presentfieldplayer4) == "payment") {
+                            gui.showMessage("you have to pay " + currentfelt.getRent(presentfieldplayer4));
+                            player4.AddToSaldo(-currentfelt.getRent(presentfieldplayer4));
+                            player4gui.setBalance(player4.GetSaldo());
                         }
-
+                        if (currentfelt.getType(presentfieldplayer4) == "Betal indkomstskat") {
+                            userbutton = gui.getUserButtonPressed(
+                                    "do you want to pay 10% of your money og 200?",
+                                    "pay 10%", "pay 200"
+                            );
+                            if (userbutton == "pay 10%") {
+                                player4.AddToSaldo(-(player4.GetSaldo() / 10));
+                                player4gui.setBalance(player4.GetSaldo());
+                            } else {
+                                player4.AddToSaldo(-200);
+                                player4gui.setBalance(player4.GetSaldo());
+                            }
+                        }
                     }
                 }
             }
         }
     }
+}
