@@ -50,4 +50,7 @@ public class Player {
         fængselstatus = false;
         return fængselstatus;
     }
+
+    public void setBalance(int getSaldo) {
+    }
 }
