@@ -69,7 +69,7 @@ class MainTest {
             player1gui.getCar().setPosition(field);
             movesmade2++;
             //   gui.showMessage("you've landed on " + field.getTitle());
-
+            // kage
         }
         System.out.println("how many times the car moved = " + movesmade2);
         System.out.println("how many complete rounds there has been = " + roundsonboard2);
