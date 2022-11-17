@@ -44,9 +44,9 @@ public final class GUI_Car extends Observable {
         public static Type getTypeFromString(String typeString){
             for(Type type : Type.values()){
                 if (type.toString().equals(typeString)) return type;
-            }     
+            }
             System.err.println("No such Type - choosing default : CAR");
-            return CAR;            
+            return CAR;
         }
 
     }
@@ -64,7 +64,7 @@ public final class GUI_Car extends Observable {
             return Pattern.FILL;
         }
     }
-    
+
     private Color primaryColor, secondaryColor;
     private Type type;
     private Pattern pattern;
@@ -79,7 +79,7 @@ public final class GUI_Car extends Observable {
      * and a random color.
      */
     public GUI_Car(){
-        this(null, null, Type.CAR, Pattern.FILL);
+        this(null, null, Type.UFO, Pattern.FILL);
     }
 
 
@@ -103,12 +103,12 @@ public final class GUI_Car extends Observable {
     private void repaint(){
         final int X = this.type.x();
         final int Y = 0;
-        
+
         if (primaryColor == null) {
             primaryColor = secondaryColor == null ? COLORS[(int) (Math.random() * 6)] : secondaryColor;
         }
         if (secondaryColor == null) { secondaryColor = primaryColor; }
-        
+
         BufferedImage template = new SwingComponentFactory().createImage(PATH).getSubimage(X, Y, WIDTH, HEIGHT);
         switch(this.pattern) {
             case FILL: this.image = paintFill(template, primaryColor); break;
@@ -122,7 +122,7 @@ public final class GUI_Car extends Observable {
             default: throw new RuntimeException(Attrs.getString("Error.BadArgument.Car.pattern"));
         }
     }
-    
+
     protected BufferedImage getImage() {
         return this.image;
     }
@@ -132,7 +132,7 @@ public final class GUI_Car extends Observable {
     public Color getSecondaryColor() {
         return this.secondaryColor;
     }
-    
+
     public void setPrimaryColor(Color color){
         this.primaryColor = color;
         repaint();
@@ -143,7 +143,7 @@ public final class GUI_Car extends Observable {
         repaint();
         notifyObservers();
     }
-    
+
     // Constants
     private static final int WIDTH = 40;
     private static final int HEIGHT = 21;
@@ -157,10 +157,10 @@ public final class GUI_Car extends Observable {
         patternImages.put(Pattern.CHECKERED, Attrs.getImagePath("GUI_Car.Image.Pattern.Checkered"));
         patternImages.put(Pattern.ZEBRA, Attrs.getImagePath("GUI_Car.Image.Pattern.Zebra"));
     }
-    
-    
-    
- // Helper methods
+
+
+
+    // Helper methods
     private BufferedImage paintFill(BufferedImage img, Color c1) {
         for (int y = 0; y < img.getHeight(); y++) {
             for (int x = 0; x < img.getWidth(); x++) {
@@ -172,17 +172,17 @@ public final class GUI_Car extends Observable {
         return img;
     }
     private BufferedImage paintHorizontalGradiant(BufferedImage img,
-        Color c1, Color c2) {
+                                                  Color c1, Color c2) {
         int r1 = c1.getRed();
         int r2 = c2.getRed();
         int g1 = c1.getGreen();
         int g2 = c2.getGreen();
         int b1 = c1.getBlue();
         int b2 = c2.getBlue();
-        
+
         int min = img.getWidth();
         int max = 0;
-        
+
         for (int y = 0; y < img.getHeight(); y++) {
             for (int x = 0; x < img.getWidth(); x++) {
                 if (img.getRGB(x, y) == PRIMARYCOLORSTANDIN) {
@@ -213,16 +213,16 @@ public final class GUI_Car extends Observable {
 
 
     private BufferedImage paintDiagonalDualColor(BufferedImage img,
-        Color c1, Color c2) {
+                                                 Color c1, Color c2) {
         String path = patternImages.get(Pattern.DIAGONAL_DUAL_COLOR);
         BufferedImage patternImg =
-            new SwingComponentFactory().createImage(path);
+                new SwingComponentFactory().createImage(path);
         return paintPattern(patternImg, img, c1, c2);
     }
 
 
     private BufferedImage paintHorizontalDualColor(BufferedImage img, Color c1, Color c2,
-            Type t) {
+                                                   Type t) {
         for (int y = 0; y < img.getHeight(); y++) {
             for (int x = 0; x < img.getWidth(); x++) {
                 if (img.getRGB(x, y) == PRIMARYCOLORSTANDIN) {
@@ -240,7 +240,7 @@ public final class GUI_Car extends Observable {
 
 
     private BufferedImage paintHorizontalLine(BufferedImage img, Color c1,
-        Color c2, Type t) {
+                                              Color c2, Type t) {
         for (int y = 0; y < img.getHeight(); y++) {
             for (int x = 0; x < img.getWidth(); x++) {
                 if (img.getRGB(x, y) == PRIMARYCOLORSTANDIN) {
@@ -258,19 +258,19 @@ public final class GUI_Car extends Observable {
     private BufferedImage paintCheckered(BufferedImage img, Color c1, Color c2) {
         String path = patternImages.get(Pattern.CHECKERED);
         BufferedImage patternImg =
-            new SwingComponentFactory().createImage(path);
+                new SwingComponentFactory().createImage(path);
         return paintPattern(patternImg, img, c1, c2);
     }
     private BufferedImage paintDotted(BufferedImage img, Color c1, Color c2) {
         String path = patternImages.get(Pattern.DOTTED);
         BufferedImage patternImg =
-            new SwingComponentFactory().createImage(path);
+                new SwingComponentFactory().createImage(path);
         return paintPattern(patternImg, img, c1, c2);
     }
     private BufferedImage paintZebra(BufferedImage img, Color c1, Color c2) {
         String path = patternImages.get(Pattern.ZEBRA);
         BufferedImage patternImg =
-            new SwingComponentFactory().createImage(path);
+                new SwingComponentFactory().createImage(path);
         return paintPattern(patternImg, img, c1, c2);
     }
     private BufferedImage paintPattern(BufferedImage patternImg, BufferedImage img, Color c1, Color c2) {
@@ -330,8 +330,8 @@ public final class GUI_Car extends Observable {
     @Override
     public String toString() {
         return "GUI_Car [primaryColor=" + primaryColor + ", secondaryColor="
-            + secondaryColor + ", type=" + type + ", pattern=" + pattern
-            + ", image=" + image + "]";
+                + secondaryColor + ", type=" + type + ", pattern=" + pattern
+                + ", image=" + image + "]";
     }
 
 
@@ -341,6 +341,6 @@ public final class GUI_Car extends Observable {
     public interface PositionChangedListener {
         void positionChanged(GUI_Car car, GUI_Field oldPosition, GUI_Field newPosition);
     }
-    
-    
+
+
 }
