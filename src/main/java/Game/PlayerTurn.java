@@ -2,7 +2,7 @@ package Game;
 
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
-
+/*
 public class PlayerTurn {
     String player1name = gui.getUserString("Enter the first players name");
     Player player1 = new Player(player1name, 20, 0);
@@ -43,6 +43,6 @@ public class PlayerTurn {
         System.out.println(currentfelt);
     }
 
+*/
 
 
-}
