@@ -600,7 +600,7 @@ public class Main {
                                 }
                             }
                         }
-                        if (currentfelt.getOwnershipStatus(presentfieldplayer2) == false) {
+                        if (!currentfelt.getOwnershipStatus(presentfieldplayer2)) {
                             userbutton = gui.getUserButtonPressed(
                                     "do you want to buy the property or do you want to pay for rent?",
                                     "buy the property", "pay for rent"
@@ -701,6 +701,7 @@ public class Main {
                                 }
                             }
                         }
+                    }
                         if (currentfelt.getType(presentfieldplayer3) == "payment") {
                             gui.showMessage("you have to pay " + currentfelt.getRent(presentfieldplayer3));
                             player3.AddToSaldo(-currentfelt.getRent(presentfieldplayer3));
@@ -719,7 +720,7 @@ public class Main {
                                 player3gui.setBalance(player3.GetSaldo());
                             }
                         }
-                    }
+
                 }
                 if (player4.getFængselstatus()) {
                     gui.showMessage(player4name + " you're in prison, so you have to wait a round");
