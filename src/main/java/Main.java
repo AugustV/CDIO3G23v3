@@ -722,7 +722,7 @@ public class Main {
                     }
                 }
                 if (player4.getFængselstatus()) {
-                    gui.showMessage(player3name + " you're in prison, so you have to wait a round");
+                    gui.showMessage(player4name + " you're in prison, so you have to wait a round");
                     player4.setFængselstatusFalse();
                 } else {
                     gui.showMessage("it is " + player4name + " turn");
@@ -763,41 +763,42 @@ public class Main {
                                     player3gui.setBalance(player3.GetSaldo());
                                 }
                             }
-                            if (currentfelt.getOwnershipStatus(presentfieldplayer4) == false) {
-                                userbutton = gui.getUserButtonPressed(
-                                        "do you want to buy the property or do you want to pay for rent?",
-                                        "buy the property", "pay for rent"
-                                );
-                                if (userbutton == "buy the property") {
-                                    player4.AddToSaldo(-currentfelt.getSalesprice(presentfieldplayer4));
-                                    player4gui.setBalance(player4.GetSaldo());
-                                    currentfelt.setOwner(player4name, presentfieldplayer4);
-                                    GUI_Ownable ownable = (GUI_Ownable) field;
-                                    ownable.setOwnerName(player4name);
-                                }
-                                if (userbutton == "pay for rent") {
-                                    player4.AddToSaldo(-currentfelt.getRent(presentfieldplayer4));
-                                    player4gui.setBalance(player4.GetSaldo());
-                                }
-                            }
                         }
-                        if (currentfelt.getType(presentfieldplayer4) == "payment") {
-                            gui.showMessage("you have to pay " + currentfelt.getRent(presentfieldplayer4));
-                            player4.AddToSaldo(-currentfelt.getRent(presentfieldplayer4));
-                            player4gui.setBalance(player4.GetSaldo());
-                        }
-                        if (currentfelt.getType(presentfieldplayer4) == "Betal indkomstskat") {
+                        if (!currentfelt.getOwnershipStatus(presentfieldplayer4)) {
                             userbutton = gui.getUserButtonPressed(
-                                    "do you want to pay 10% of your money og 200?",
-                                    "pay 10%", "pay 200"
+                                    "do you want to buy the property or do you want to pay for rent?",
+                                    "buy the property", "pay for rent"
                             );
-                            if (userbutton == "pay 10%") {
-                                player4.AddToSaldo(-(player4.GetSaldo() / 10));
+                            if (userbutton == "buy the property") {
+                                player4.AddToSaldo(-currentfelt.getSalesprice(presentfieldplayer4));
                                 player4gui.setBalance(player4.GetSaldo());
-                            } else {
-                                player4.AddToSaldo(-200);
+                                currentfelt.setOwner(player4name, presentfieldplayer4);
+                                GUI_Ownable ownable = (GUI_Ownable) field;
+                                ownable.setOwnerName(player4name);
+                            }
+                            if (userbutton == "pay for rent") {
+                                player4.AddToSaldo(-currentfelt.getRent(presentfieldplayer4));
                                 player4gui.setBalance(player4.GetSaldo());
                             }
+                        }
+                    }
+
+                    if (currentfelt.getType(presentfieldplayer4) == "payment") {
+                        gui.showMessage("you have to pay " + currentfelt.getRent(presentfieldplayer4));
+                        player4.AddToSaldo(-currentfelt.getRent(presentfieldplayer4));
+                        player4gui.setBalance(player4.GetSaldo());
+                    }
+                    if (currentfelt.getType(presentfieldplayer4) == "Betal indkomstskat") {
+                        userbutton = gui.getUserButtonPressed(
+                                "do you want to pay 10% of your money og 200?",
+                                "pay 10%", "pay 200"
+                        );
+                        if (userbutton == "pay 10%") {
+                            player4.AddToSaldo(-(player4.GetSaldo() / 10));
+                            player4gui.setBalance(player4.GetSaldo());
+                        } else {
+                            player4.AddToSaldo(-200);
+                            player4gui.setBalance(player4.GetSaldo());
                         }
                     }
                 }
