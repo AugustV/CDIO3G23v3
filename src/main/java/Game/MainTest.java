@@ -1,3 +1,5 @@
+package Game;
+
 import Game.Player;
 import Game.Turn1die;
 import gui_fields.GUI_Field;
@@ -22,7 +24,7 @@ class MainTest {
         /*
         This method will test the functions used to move players around them board.
          */
-        Player player1 = new Player(player1name, 20000, 0);
+        Player player1 = new Player(player1name, 20000, 0,player1gui);
        // gui.addPlayer(player1gui);
         //player1gui.getCar().setPosition(field);
 
