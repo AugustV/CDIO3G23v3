@@ -1,19 +1,30 @@
 package Game;
+
+import gui_fields.GUI_Player;
+
 public class Player {
     private int saldo;
     public String navn;
     private int felt;
     private boolean fængselstatus;
+
+    private GUI_Player gui_player;
+
+    public GUI_Player getGui_player() {
+        return gui_player;
+    }
+
     /**
      *
      * @param n This allows the player to get a personal name
      * @param saldo The player get's a saldo attached to it's name (n)
      */
-    public Player (String n, int saldo, int felt){
+    public Player (String n, int saldo, int felt, GUI_Player gui_player){
         this.navn = n;
         this.saldo = saldo;
         this.felt = felt;
         fængselstatus = false;
+        this.gui_player = gui_player;
     }
     /**
      * We told the program each tile has a value, in this section we ask the program to tell us what saldo is before rolling the dices

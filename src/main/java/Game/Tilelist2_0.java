@@ -36,7 +36,7 @@ public class Tilelist2_0 {
         liste2_0[i++] = new Tile2_0("Ejendom", 5 , 5 );
     }
     public String getType(int i) {return liste2_0[i].getType();}
-    public String getOwner(int i) {return liste2_0[i].getOwner();}
+    public Player getOwner(int i) {return liste2_0[i].getOwner();}
     public boolean getOwnershipStatus(int i) {return liste2_0[i].getOwnershipStatus();}
     public int getRent(int i) {return liste2_0[i].getRent();}
     public static Tilelist2_0 getInstance()
@@ -51,6 +51,6 @@ public class Tilelist2_0 {
     }
     public int getSalesprice(int i) {return liste2_0[i].getSalesprice();}
 
-    public void setOwner(String newOwner,int i){liste2_0[i].setOwner(newOwner);}
+    public void setOwner(Player newOwner,int i){liste2_0[i].setOwner(newOwner);}
 
 }

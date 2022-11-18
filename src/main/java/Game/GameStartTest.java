@@ -8,9 +8,9 @@ class GameStartTest {
 
     @Test
     void getInstance() {
+        Player[] players =  GameStart.gamestart();
+        Game.runGame();
 
-        GameStart.gamestart();
 
-        System.out.println(GameStart.Getplayernumber());
     }
 }
