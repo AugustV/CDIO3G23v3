@@ -8,7 +8,7 @@ public class Turn1die {
     int sum;
 
     /**
-     * Rolls 2 die and saves them in the variable sum.
+     * Rolls 1 die and saves them in the variable sum.
      *
      * @return sum, returns the sum of the roll.
      */
