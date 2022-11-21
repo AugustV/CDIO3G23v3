@@ -24,6 +24,7 @@ public class PlayerTurn extends Game {
                 presentfieldplayer1pre = presentfieldplayer1;
                 player.AddToFelt(-24);
                 player.AddToSaldo(2);
+                player.getGui_player().setBalance(player.GetSaldo());
             } else presentfieldplayer1 = presentfieldplayer1pre;
             gui.showMessage("that means you've move to felt " + player.GetFelt());
             GUI_Field field = gui.getFields()[presentfieldplayer1];

@@ -25,6 +25,7 @@ class Game {
                 playerTurn.playerturn(player, die, gui);
                 if(player.GetSaldo() <= 0) {
                     gameOver =true;
+                    break;
                 }
             }
         } while(gameOver == false);
