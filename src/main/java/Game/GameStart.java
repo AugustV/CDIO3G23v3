@@ -34,11 +34,5 @@ public class GameStart {
     public static int Getplayernumber(){    //objekt der returnere hvor mange player der er i spillet
         return playernumber;    //returnere player antal
     }
-    /* public static GameStart getInstance()
-    {
-        if(single_instance == null)
-            single_instance = new GameStart();
-        return single_instance;
-    }
-*/
+
 }

@@ -5,11 +5,7 @@ import gui_main.GUI;
 import org.sonatype.guice.plexus.binders.PlexusAnnotatedBeanModule;
 class Game {
     private static Player[] players; //laver et player array ud fra hvor mange spillere der er i spillet
-/*
-    public Game(Player[] players) {
-        this.players = players;
-    }
- */
+
     public static void runGame() {  //kører spillet
         GUI gui = GameStart.gui;    //laver en gui ud fra gamestart
         players = GameStart.players;    //sætter vores array players lige med gamestarts array players
@@ -25,5 +21,23 @@ class Game {
                 }
             }
         } while(gameOver == false); //køre do loopet mens gameover er false
+        for(Player player : players){
+            System.out.println(player.GetSaldo());
+
+        }
+        Player winner = players[0];
+        for (Player player : players) {
+
+            if (player.GetSaldo() > winner.GetSaldo()) {
+                winner = player;
+            }
+        }
+       gui.showMessage(winner.toString() + "has won the game ");
+
+        System.out.println(winner.toString() + " has won the game!" );
+        System.out.println("Congratulation to the winner");
+        System.out.println("And thank you for playing");
+
     }
+
 }

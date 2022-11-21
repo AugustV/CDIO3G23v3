@@ -85,6 +85,15 @@ public class PlayerTurn extends Game {
                 gui.showMessage("you need to wait a round before you can start again");
                 player.setFængselstatusTrue();
             }
+            if (currentfelt.getType(presentfieldplayer1)== "Prøv lykken"){
+                int card = CardDraw.drawcard();
+                gui.showMessage("you draw a random card from the chance card deck");
+                gui.showMessage("you've drawn the card  " + Chancecarddeck.getInstance().getText(card));
+                player.AddToSaldo(Chancecarddeck.getInstance().getnumber(card));
+                player.getGui_player().setBalance(player.GetSaldo());
+                System.out.println(Chancecarddeck.getInstance().getnumber(card));
+
+            }
         }
 
 
