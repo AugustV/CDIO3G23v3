@@ -37,10 +37,10 @@ class MainTest {
           //  gui.showMessage("you've got " + roll1);
             int presentfieldplayer1pre = player1.AddToFelt(roll1);
             int presentfieldplayer1;
-            if (presentfieldplayer1pre > 39) {
-                presentfieldplayer1 = presentfieldplayer1pre - 40;
+            if (presentfieldplayer1pre > 23) {
+                presentfieldplayer1 = presentfieldplayer1pre - 24;
                 presentfieldplayer1pre = presentfieldplayer1;
-                player1.AddToFelt(-40);
+                player1.AddToFelt(-24);
                 roundsonboard1++;
             } else presentfieldplayer1 = presentfieldplayer1pre;
            // gui.showMessage("that means you've move to felt " + player1.GetFelt());
@@ -55,15 +55,15 @@ class MainTest {
 
         System.out.println("Test for moving 2 step at a time.");
         for(int  i = 0; i < 100000000; i++) {
-            int roll1 = 2;
+            int roll1 = 1;
             // gui.setDie(roll1);
             //  gui.showMessage("you've got " + roll1);
             int presentfieldplayer1pre = player1.AddToFelt(roll1);
             int presentfieldplayer1;
-            if (presentfieldplayer1pre > 39) {
-                presentfieldplayer1 = presentfieldplayer1pre - 40;
+            if (presentfieldplayer1pre > 23) {
+                presentfieldplayer1 = presentfieldplayer1pre -24;
                 presentfieldplayer1pre = presentfieldplayer1;
-                player1.AddToFelt(-40);
+                player1.AddToFelt(-24);
                 roundsonboard2++;
             } else presentfieldplayer1 = presentfieldplayer1pre;
             // gui.showMessage("that means you've move to felt " + player1.GetFelt());
