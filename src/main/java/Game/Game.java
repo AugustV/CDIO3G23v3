@@ -23,7 +23,7 @@ class Game {
         do {
             for (Player player : players) {
                 playerTurn.playerturn(player, die, gui);
-                if(player.GetSaldo() < 0) {
+                if(player.GetSaldo() <= 0) {
                     gameOver =true;
                 }
             }
