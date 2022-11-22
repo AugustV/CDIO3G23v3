@@ -1,22 +1,32 @@
 package Game;
+
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Ownable;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
-public class PlayerTurn extends Game {  //laver en classe der hedder playerturn
-    /**
-     *
-     * @param player er vores egen spillerclasse hvor vi har nogen parameter
-     * @param playerturn er en hel tur for en spiller
-     * @param gui er den gui vi bruger
-     */
-    public void playerturn(Player player,Turn1die playerturn, GUI gui) {
-        if (player.getFængselstatus()) {    //her tjekker vi om spilleren er i fængsel. hvis ja gør den ind i loopet
-            gui.showMessage(player.toString() + " you're in prison, so you have to wait a round");  //printer noget tekst
-            player.setFængselstatusFalse(); //sætter fængselstatus til false, da spilleren har været i fængsel nu
-        } else {
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class PlayerTurnTest {
+
+    @Test
+    void playerturn() {
+
+        int count = 0;
+        for (int i = 0; i<10;i++) {
+            int die = 3;
+            GUI gui = new GUI();
+
+            GUI_Player playergui = new GUI_Player("Testmand", 20);
+
+            Player player = new Player("Testmand", 20, 0, playergui);
+            gui.addPlayer(playergui);   //tilføjer en player til vores GUI
+            GUI_Field field = gui.getFields()[0];
+
+
             gui.showMessage("it is " + player.toString() + " turn");    //printer noget tekst
-            int roll1 = playerturn.tur();   //ruller en terning
+            int roll1 = die;   //ruller en terning
             gui.setDie(roll1);  //viser det på gui'en
             gui.showMessage("you've got " + roll1); //printer noget tekst
             int presentfieldplayer1pre = player.AddToFelt(roll1);   //sætter presenfieldplayerpre til at være lige med det nye punkt spilleren står på
@@ -29,7 +39,7 @@ public class PlayerTurn extends Game {  //laver en classe der hedder playerturn
                 player.getGui_player().setBalance(player.GetSaldo());   //sætter balancen i gui'en til den nuværende saldo
             } else presentfieldplayer1 = presentfieldplayer1pre;    //går ind i dette loop
             gui.showMessage("that means you've move to felt " + player.GetFelt());  //printer noget tekst
-            GUI_Field field = gui.getFields()[presentfieldplayer1]; //får det felt som spilleren lander på
+            field = gui.getFields()[presentfieldplayer1]; //får det felt som spilleren lander på
             player.getGui_player().getCar().setPosition(field); //sætter spillerens position til det sted han lander
             gui.showMessage("you've landed on " + field.getTitle());    //printer noget tekst
             Tilelist2_0 currentfelt = Tilelist2_0.getInstance();    //laver en instans af vores tilelist array
@@ -87,15 +97,22 @@ public class PlayerTurn extends Game {  //laver en classe der hedder playerturn
                 gui.showMessage("you need to wait a round before you can start again"); //printer noget tekst
                 player.setFængselstatusTrue();  //sætter spillerens  fængselstatus til true
             }
-            if (currentfelt.getType(presentfieldplayer1)== "Prøv lykken"){
+            if (currentfelt.getType(presentfieldplayer1) == "Prøv lykken") {
                 int card = CardDraw.drawcard();
                 gui.showMessage("you draw a random card from the chance card deck");
-                gui.showMessage("you've drawn the card  " + Chancecarddeck.getInstance().getText(card));
+                gui.showMessage("you've drawn the card  " + Chancecarddeck.getInstance().getTitle(card) );
+                gui.showMessage(Chancecarddeck.getInstance().getText(card));
                 player.AddToSaldo(Chancecarddeck.getInstance().getnumber(card));
                 player.getGui_player().setBalance(player.GetSaldo());
-              //  System.out.println(Chancecarddeck.getInstance().getnumber(card));
+                //  System.out.println(Chancecarddeck.getInstance().getnumber(card));
 
             }
+            count++;
         }
+
+        System.out.println(count);
     }
+
 }
+
+

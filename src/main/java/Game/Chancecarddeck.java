@@ -16,6 +16,7 @@ public class Chancecarddeck {
         deck[i++] = new Chancecard("Counterfeitbills","Some of the cash you own turned out to be counterfeit",-1);//5
         deck[i++] = new Chancecard("Inflation","You have lost money on an investment",-1);//6
         deck[i++] = new Chancecard("Gamestop","You got in on gamestop before the squeeze",20);//7
+        deck[i++] = new Chancecard("Get out of jail","You can get out of prison next time you end up there",0);//8
         deck[i++] = new Chancecard("Bad Exposure","Some of the bonds on your account go to zero",-10);//9
         deck[i++] = new Chancecard("Big time investment","You gain an influx of capital from an investor ",10);//10
         deck[i++] = new Chancecard("Gold reserves","Your gold ses a large appreciation",15);//11
@@ -33,5 +34,7 @@ public class Chancecarddeck {
         return single_instance;
 
     }
+
+
 }
 

@@ -22,8 +22,8 @@ public class Chancecard {
     }
 
     public Chancecard(String name, String text, int number ){
-    this.name=Titel;
-    this.text = flavourtext;
+    this.name=name;
+    this.text = text;
     this.nummer=number;
 
 }
