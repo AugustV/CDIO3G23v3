@@ -87,6 +87,15 @@ public class PlayerTurn extends Game {  //laver en classe der hedder playerturn
                 gui.showMessage("you need to wait a round before you can start again"); //printer noget tekst
                 player.setFængselstatusTrue();  //sætter spillerens  fængselstatus til true
             }
+            if (currentfelt.getType(presentfieldplayer1)== "Prøv lykken"){
+                int card = CardDraw.drawcard();
+                gui.showMessage("you draw a random card from the chance card deck");
+                gui.showMessage("you've drawn the card  " + Chancecarddeck.getInstance().getText(card));
+                player.AddToSaldo(Chancecarddeck.getInstance().getnumber(card));
+                player.getGui_player().setBalance(player.GetSaldo());
+                System.out.println(Chancecarddeck.getInstance().getnumber(card));
+
+            }
         }
     }
 }
