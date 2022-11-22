@@ -6,9 +6,12 @@ public class Player {   //laver en player classe
     private int felt;   //laver en integer der hedder felt som fortæller hvor spilleren er lige nu
     private boolean fængselstatus;  //laver en fængselstatus som bruges til at man skal køre en runde mere
     private GUI_Player gui_player;  //laver en gui_player til hver spiller
+
+    private boolean getoutofjailcard;
     public GUI_Player getGui_player() { //laver et objekt der kan returnere en gui player
         return gui_player;
     }
+
     /**
      * @param n står for navn. så hver player har et navn
      * @param saldo er hvor mange penge spilleren har tilbage
@@ -20,6 +23,7 @@ public class Player {   //laver en player classe
         this.saldo = saldo;
         this.felt = felt;
         fængselstatus = false;  //indeholder også fængselstatus som altider er sat til false
+        getoutofjailcard = false;
         this.gui_player = gui_player;
     }
     public int GetSaldo (){return this.saldo;}  //en metode hvor man kan få en players saldo
@@ -43,4 +47,16 @@ public class Player {   //laver en player classe
         return fængselstatus;   //returnere fængselstatus
     }
     public void setBalance(int getSaldo) {}
+    public boolean isGetoutofjailcard() {
+        return getoutofjailcard;
+    }
+
+    public boolean getoutofjailcardTrue(){  //her kan man sætte en spiller til at være i fængsel
+        getoutofjailcard = true;   //sætter fængselstatus boolean til true
+        return getoutofjailcard;   //returnere den nye fængselstatus
+    }
+    public boolean sgetoutofjailcardFalse(){ //her kan man sætte spilleren til ikke at være i fængsel
+        getoutofjailcard = false;  //sætter fængselstatus til false
+        return getoutofjailcard;   //returnere fængselstatus
+    }
 }

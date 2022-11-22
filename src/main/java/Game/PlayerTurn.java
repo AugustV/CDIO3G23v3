@@ -11,9 +11,10 @@ public class PlayerTurn extends Game {  //laver en classe der hedder playerturn
      * @param gui er den gui vi bruger
      */
     public void playerturn(Player player,Turn1die playerturn, GUI gui) {
-        if (player.getFængselstatus()) {    //her tjekker vi om spilleren er i fængsel. hvis ja gør den ind i loopet
+        if (player.getFængselstatus() && player.isGetoutofjailcard()) {    //her tjekker vi om spilleren er i fængsel. hvis ja gør den ind i loopet
             gui.showMessage(player.toString() + " you're in prison, so you have to wait a round");  //printer noget tekst
             player.setFængselstatusFalse(); //sætter fængselstatus til false, da spilleren har været i fængsel nu
+            player.sgetoutofjailcardFalse();
         } else {
             gui.showMessage("it is " + player.toString() + " turn");    //printer noget tekst
             int roll1 = playerturn.tur();   //ruller en terning
@@ -93,6 +94,10 @@ public class PlayerTurn extends Game {  //laver en classe der hedder playerturn
                 gui.showMessage("you've drawn the card  " + Chancecarddeck.getInstance().getText(card));
                 player.AddToSaldo(Chancecarddeck.getInstance().getnumber(card));
                 player.getGui_player().setBalance(player.GetSaldo());
+                if(card == 7){
+                    player.getoutofjailcardTrue();
+
+                }
               //  System.out.println(Chancecarddeck.getInstance().getnumber(card));
 
             }
