@@ -22,34 +22,25 @@ public class Player {   //laver en player classe
         fængselstatus = false;  //indeholder også fængselstatus som altider er sat til false
         this.gui_player = gui_player;
     }
-    public int GetSaldo (){ //
-        return this.saldo;
+    public int GetSaldo (){return this.saldo;}  //en metode hvor man kan få en players saldo
+    public int AddToSaldo (int ammount){    //metode hvor man kan addere til en players saldo
+        saldo = saldo + ammount;    //addere til ens saldo
+        return saldo;   //returnere saldo
     }
-
-    public int AddToSaldo (int ammount){
-        saldo = saldo + ammount;
-        return saldo;
+    public String toString (){return this.navn;}    //returnere en spillers navn
+    public int GetFelt () {return this.felt;}   //returnere spillerens nuværende position
+    public int AddToFelt (int ammount){ //en metode til at addere til ens position
+        felt = felt + ammount;  //tilføjer de eksta tal til ens position så man kommer længere på brættet
+        return felt;    //returnere felt
     }
-    public String toString (){
-        return this.navn;
+    public boolean getFængselstatus() {return fængselstatus;}   //en metode hvor man kan se om en spiller er i fængsel
+    public boolean setFængselstatusTrue(){  //her kan man sætte en spiller til at være i fængsel
+        fængselstatus = true;   //sætter fængselstatus boolean til true
+        return fængselstatus;   //returnere den nye fængselstatus
     }
-    public int GetFelt () {return this.felt;}
-    public int AddToFelt (int ammount){
-        felt = felt + ammount;
-        return felt;
+    public boolean setFængselstatusFalse(){ //her kan man sætte spilleren til ikke at være i fængsel
+        fængselstatus = false;  //sætter fængselstatus til false
+        return fængselstatus;   //returnere fængselstatus
     }
-    public boolean getFængselstatus() {
-        return fængselstatus;
-    }
-    public boolean setFængselstatusTrue(){
-        fængselstatus = true;
-        return fængselstatus;
-    }
-    public boolean setFængselstatusFalse(){
-        fængselstatus = false;
-        return fængselstatus;
-    }
-
-    public void setBalance(int getSaldo) {
-    }
+    public void setBalance(int getSaldo) {}
 }
