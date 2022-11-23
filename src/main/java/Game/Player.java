@@ -55,8 +55,8 @@ public class Player {   //laver en player classe
         getoutofjailcard = true;   //sætter fængselstatus boolean til true
         return getoutofjailcard;   //returnere den nye fængselstatus
     }
-    public boolean sgetoutofjailcardFalse(){ //her kan man sætte spilleren til ikke at være i fængsel
-        getoutofjailcard = false;  //sætter fængselstatus til false
-        return getoutofjailcard;   //returnere fængselstatus
+    public boolean getoutofjailcardFalse(){ //her kan man sætte spilleren til ikke at være i fængsel
+        getoutofjailcard = false;  //sætter getoutofjailcard til false
+        return getoutofjailcard;   //returnere getoutofjailcard
     }
 }

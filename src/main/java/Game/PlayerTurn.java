@@ -14,8 +14,13 @@ public class PlayerTurn extends Game {  //laver en classe der hedder playerturn
         if (player.getFængselstatus() && player.isGetoutofjailcard()) {    //her tjekker vi om spilleren er i fængsel. hvis ja gør den ind i loopet
             gui.showMessage(player.toString() + " you're in prison, so you have to wait a round");  //printer noget tekst
             player.setFængselstatusFalse(); //sætter fængselstatus til false, da spilleren har været i fængsel nu
-            player.sgetoutofjailcardFalse();
+
         } else {
+            if(player.isGetoutofjailcard() == true && player.getFængselstatus() ) {
+                gui.showMessage("You use the get out of jail free card to escape");
+                player.getoutofjailcardFalse();
+                player.setFængselstatusFalse();
+            }
             gui.showMessage("it is " + player.toString() + " turn");    //printer noget tekst
             int roll1 = playerturn.tur();   //ruller en terning
             gui.setDie(roll1);  //viser det på gui'en
