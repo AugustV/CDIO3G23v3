@@ -125,7 +125,7 @@ class PlayerTurnTest {
                         }
 
                     }
-
+//Hej
                     count++;
 
                 }
