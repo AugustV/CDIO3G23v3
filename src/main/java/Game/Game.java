@@ -40,9 +40,5 @@ class Game {
             System.out.println(winner.toString() + " has won the game!");
             System.out.println("Congratulation to the winner");
             System.out.println("And thank you for playing");
-
-        }
-
-
-
     }
+}

@@ -50,7 +50,6 @@ public class Player {   //laver en player classe
     public boolean isGetoutofjailcard() {
         return getoutofjailcard;
     }
-
     public boolean getoutofjailcardTrue(){  //her kan man sætte en spiller til at være i fængsel
         getoutofjailcard = true;   //sætter fængselstatus boolean til true
         return getoutofjailcard;   //returnere den nye fængselstatus
