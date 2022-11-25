@@ -18,6 +18,7 @@ class Game {
                 playerTurn.playerturn(player, die, gui);    //
                 if (player.GetSaldo() <= 0) {    //fortæller hvis playerens saldo er 0 eller mindre skal den ind i loopet
                     gameOver = true; //ændre boolean gameover til true da en har tabt
+                    gui.showMessage(player.navn + " lost. The game is over");
                     break;  //spillet skal stoppe
                 }
             }
@@ -41,5 +42,7 @@ class Game {
             System.out.println("And thank you for playing");
 
         }
+
+
 
     }
