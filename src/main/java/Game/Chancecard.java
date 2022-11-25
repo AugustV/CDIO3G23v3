@@ -14,7 +14,17 @@ public class Chancecard {
     public int getNummer() {
         return nummer;
     }
+    /*
+    Her er get metoder til hver af de forskellige variabler.
+
+     */
+
     public Chancecard(String name, String text, int number ){
+        /*
+        Objektet Chancecard tager parameterne String name, String text, og et tal int number.
+
+         */
+
     this.name=name;
     this.text = text;
     this.nummer=number;

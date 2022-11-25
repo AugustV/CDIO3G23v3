@@ -3,11 +3,18 @@ package Game;
 public class Chancecarddeck {
 
     private Chancecard[] deck;
-    private static Chancecarddeck single_instance = null;
+    private static Chancecarddeck single_instance = null; // Sætter en variable af typen Chancecarddeck til null
 
     private Chancecarddeck(){
+        /*
+        Laver en array på 12 af typen Chancecard
+         */
         deck = new Chancecard[12];
         int i = 0;
+        /*
+        int i bruges til at incrimente arrayen
+        Nedenfor har de 12 pladser 0-11 i arrayen fået givet parameterene til alle 12 instancer af Chancecard
+        */
 
         deck[i++] = new Chancecard("Lottery","You win the lottery, you got 3 coins",3); //1
         deck[i++] = new Chancecard("Federal Grant","Your business recieved a federal grant, you got 5 coins",5); //2
@@ -29,6 +36,11 @@ public class Chancecarddeck {
 
     public static Chancecarddeck getInstance()
     {
+        /*
+        Dette if loop sikkerer at der kun er præcis en Instance af objektet Chancecarddeck
+        Dette sikkerer at der kun er et deck af chancekort som vi kalder hvert gang decket bruges dette gør at der ikke
+        instanceres et nyt deck hver gang.
+         */
         if(single_instance == null)
             single_instance = new Chancecarddeck();
         return single_instance;
