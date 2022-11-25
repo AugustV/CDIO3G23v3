@@ -10,7 +10,7 @@ public class GameStart {
     public GameStart() {}   //Laver et objekt der hedder GameStart
     public  static Player[] gamestart(){    //laver en player array der hedder gamestart
         gui = new GUI(); //Opretter en ny GUI
-        gui.showMessage("welcome to the game"); //printer noget tekst
+        gui.showMessage("welcome to the game"); //printer noget tekst'
         String userbutton = gui.getUserButtonPressed(   //laver en knap som brugeren kan trykke på
                 "how many players are in this game?",   //printer noget tekst
                 "2", "3", "4"   //valgmuligheder af knapper
@@ -34,5 +34,4 @@ public class GameStart {
     public static int Getplayernumber(){    //objekt der returnere hvor mange player der er i spillet
         return playernumber;    //returnere player antal
     }
-
 }
